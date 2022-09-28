@@ -36,4 +36,4 @@ yarn-error.log*
 next-env.d.ts
 
 # Custom
-/assets/fonts
+/public/assets/fonts

@@ -8,11 +8,13 @@ const UnderConstruction = ({alternateRessourceLink, alternateRessourceName} : Un
 	return ( 
 		<div className="w-full h-full
 						flex flex-col items-center justify-center" >
-			<div className="p-8">
-				<p>🛠<br/>Sorry, this page is under construction at the moment.</p>
+			<div className="p-8 
+							font-serif font-normal leading-8 text-stone-100 ">
+				<p className="text-5xl mb-2">🛠</p>
+				<p>Sorry, this page is under construction at the moment.</p>
 				{ 
 					alternateRessourceName &&
-					<p>In the meantime you can still check my <a href={alternateRessourceLink}>{alternateRessourceName}</a> for mor info.</p>
+					<p>In the meantime you can still check my <a href={alternateRessourceLink} className="underline underline-offset-4">{alternateRessourceName}</a> for more info.</p>
 				}
 			</div>
 		</div>

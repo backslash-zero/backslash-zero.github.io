@@ -4,7 +4,7 @@ import SmokeMachine from '@bijection/smoke'
 
 const drawSmoke = (ctx : CanvasRenderingContext2D) => {
 	const canvas = ctx.canvas;
-	const smokeColor : number[] = [120, 113, 108]
+	const smokeColor : number[] = [87, 83, 78]
 	const ammount = 5;
 	const party = SmokeMachine(ctx, smokeColor)
 	
@@ -15,19 +15,6 @@ const drawSmoke = (ctx : CanvasRenderingContext2D) => {
 				party.addSmoke((canvas.width/ammount) * i, canvas.height * 1, (Math.cos(i) + 2) * 0.1)
         }
     })
-}
-
-const draw = (ctx : CanvasRenderingContext2D) => {
-	const canvas = ctx.canvas;
-	
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	ctx.fillStyle = "salmon";
-	ctx.fillRect(0, 0, canvas.width, canvas.height);
-	ctx.fillStyle = "white";
-	ctx.font = "50px sans-serif";
-	ctx.fillText("Resize Me!", canvas.width / 2 - 100, canvas.height / 2, 200);
-
-	requestAnimationFrame(() => draw(ctx));
 }
 
 const CanvasSmoke = () => {
@@ -60,9 +47,8 @@ const CanvasSmoke = () => {
 	return (
 		<>
 			<canvas 
-				className="bg-stone-100"
+				className="bg-stone-200"
 				ref={canvasRef}>
-
 			</canvas>
 		</>
 	);
