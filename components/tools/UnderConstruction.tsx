@@ -6,7 +6,7 @@ interface UnderConstructionProps {
 
 const UnderConstruction = ({alternateRessourceLink, alternateRessourceName} : UnderConstructionProps) => {
 	return ( 
-		<div className="w-full h-full
+		<div className="w-full h-full absolute
 						flex flex-col items-center justify-center" >
 			<div className="p-8 
 							font-serif font-normal leading-8 text-stone-100 ">
