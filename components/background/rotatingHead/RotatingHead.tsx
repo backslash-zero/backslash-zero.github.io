@@ -4,6 +4,7 @@ import { Environment, OrbitControls } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { MutableRefObject, Suspense, useEffect, useRef, useState } from "react";
 import Model from "./Model";
+import { Camera } from "three";
 
 
 const RotatingHead = () => {
@@ -12,8 +13,9 @@ const RotatingHead = () => {
 			<Canvas className='bg-blue-500/20'>
 				<Suspense fallback={null}>
 					<Model/>
-					<pointLight  intensity={0.2} />
-					<ambientLight intensity={0.2} />
+					<pointLight position={[10, 10, 10]} intensity={0.2} />
+					<ambientLight intensity={0.1} />
+					<OrbitControls />
 				</Suspense>
 			</Canvas>
 		</div>
