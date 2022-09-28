@@ -11,7 +11,7 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<CelestinOverlay/>
-			<ul className='w-full h-full
+			<ul className='absolute w-full h-full
 							flex flex-col items-center justify-center gap-10
 							text-stone-800
 							'>
