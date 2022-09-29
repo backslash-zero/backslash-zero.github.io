@@ -13,8 +13,10 @@ const RotatingHead = () => {
 			<Canvas className=''>
 				<Suspense fallback={null}>
 					<Model/>
-					<pointLight position={[10, 10, 10]} intensity={0.2} />
-					<ambientLight intensity={0.1} />
+					<pointLight position={[-20, 10, 10]} color={[0,0,255]}	intensity={0.01} />
+					<pointLight position={[0, -10, 10]} color={[0,255,0]}	intensity={0.01} />
+					<pointLight position={[20, 10, 10]} color={[255,0,0]}	intensity={0.01} />
+					{/* <ambientLight intensity={1} /> */}
 					{/* <OrbitControls /> */}
 				</Suspense>
 			</Canvas>

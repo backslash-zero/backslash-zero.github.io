@@ -79,7 +79,7 @@
 						"repo" : "https://github.com/backslash-zero/42-ft_transcendance",
 						"assets": {},
 						"tagline ": "Final Common-core 42 Paris project. Full-stack web application: multiplayer online Pong game ",
-						"example" : "https://"
+						"example" : "https://frontend-transcendence.herokuapp.com/"
 					},
 					"minit_rt": {
 						"ready": true,
