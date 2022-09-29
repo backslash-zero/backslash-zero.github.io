@@ -172,14 +172,14 @@
 		}
 	},
 	"www.celest.in": {
-		"ready": false,
+		"ready": true,
 		"About": {
 			"info" : "Lyon-born, Berlin-based, mixed media designer/developer. <br>I like to work with code and programmation, 3D, video, and film/digital photography.",
 			"links" : {
 				"insta" : "https://www.instagram.com/cele_stin/",
 				"email" : "hello (at) celest.in"
 			},
-			"ready": false
+			"ready": true
 		},
 		"Work": {
 			"ready": true,
