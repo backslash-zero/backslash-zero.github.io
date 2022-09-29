@@ -1,6 +1,6 @@
 const CelestinOverlay = () => {
 	const overlayColor : string = "fill-transparent"
-	const strokeStyle : string = "stroke-1 stroke-stone-300"
+	const strokeStyle : string = "stroke-1 stroke-stone-400"
 	return (
 		<div className="absolute w-screen h-screen p-4
 						grid grid-cols-2 md:grid-cols-4 gap-4

@@ -4,7 +4,7 @@ import SmokeMachine from '@bijection/smoke'
 
 const drawSmoke = (ctx : CanvasRenderingContext2D) => {
 	const canvas = ctx.canvas;
-	const smokeColor : number[] = [87, 83, 78]
+	const smokeColor : number[] = [80, 80, 80]
 	const ammount = 5;
 	const party = SmokeMachine(ctx, smokeColor)
 	
@@ -12,7 +12,8 @@ const drawSmoke = (ctx : CanvasRenderingContext2D) => {
 	party.start()
 	party.setPreDrawCallback(() => {
 		for(var i=0; i<=ammount;i++){
-				party.addSmoke((canvas.width/ammount) * i, canvas.height * 1, (Math.cos(i) + 2) * 0.1)
+				// party.addSmoke(x,y, ammount, options) 
+				party.addSmoke((canvas.width/ammount) * i, canvas.height * 1.2, (Math.cos(i) + 2) * 0.1)
         }
     })
 }
@@ -47,7 +48,7 @@ const CanvasSmoke = () => {
 	return (
 		<>
 			<canvas 
-				className="bg-stone-200"
+				className=""
 				ref={canvasRef}>
 			</canvas>
 		</>

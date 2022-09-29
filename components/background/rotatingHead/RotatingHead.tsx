@@ -10,12 +10,12 @@ import { Camera } from "three";
 const RotatingHead = () => {
 	return ( 
 		<div className='absolute w-full h-full '>
-			<Canvas className='bg-blue-500/20'>
+			<Canvas className=''>
 				<Suspense fallback={null}>
 					<Model/>
 					<pointLight position={[10, 10, 10]} intensity={0.2} />
 					<ambientLight intensity={0.1} />
-					<OrbitControls />
+					{/* <OrbitControls /> */}
 				</Suspense>
 			</Canvas>
 		</div>

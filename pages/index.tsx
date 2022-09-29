@@ -9,17 +9,17 @@ import CelestinOverlay from '../components/background/CelestinOverlay'
 
 const Home: NextPage = () => {
 	return (
-		<>
+		<div className='w-full h-full'>
 			<CelestinOverlay/>
 			<ul className='absolute w-full h-full
 							flex flex-col items-center justify-center gap-10
 							text-stone-800
 							'>
-				<li><MainMenuButton name="/About" link="/About"/></li>
-				<li><MainMenuButton name="/Work" link="/Work"/></li>
-				<li><MainMenuButton name="/Art" link="/Art"/></li>
+				<li><MainMenuButton name="About" link="/About"/></li>
+				<li><MainMenuButton name="Dev/Design" link="/Work"/></li>
+				<li><MainMenuButton name="Art Projects" link="/Art"/></li>
 			</ul>
-		</>
+		</div>
 	)
 }
 
