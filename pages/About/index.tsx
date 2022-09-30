@@ -16,9 +16,9 @@ const About = () => {
 	return (  
 		<div className="w-full h-full">
 			<NavBar back="/"/>
-			{/* <RotatingHead
+			<RotatingHead
 				material={material}
-			/> */}
+			/>
 			<div className="absolute w-full h-full 
 							flex flex-col items-center justify-center
 							p-4
