@@ -15,9 +15,9 @@ const RotatingHead = ({ material } : RotatingHeadProps) => {
 	return ( 
 		<div className='absolute w-full h-full '>
 			<Canvas>
-					<Model
+					{/* <Model
 						material={material}
-					/>
+					/> */}
 					{
 						material === "default" ?
 						<>
