@@ -61,16 +61,16 @@ const Model = ({ props, material }: ModelProps) => {
 
   return (
 	<group {...props} dispose={null}>
-	  {/* <mesh
-	  		ref={ myMesh }
-	  		geometry={ nodes.celehead.geometry } 
-			material={ assignMaterial(material) }
-		/> */}
 	  <mesh
 	  		ref={ myMesh }
 	  		geometry={ nodes.celehead.geometry } 
-			material={ materials['kt_facebuilder_material.005']}
+			material={ assignMaterial(material) }
 		/>
+	  {/* <mesh
+	  		ref={ myMesh }
+	  		geometry={ nodes.celehead.geometry } 
+			material={ materials['kt_facebuilder_material.005']}
+		/> */}
 	</group>
   )
 }

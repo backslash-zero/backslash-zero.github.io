@@ -5,6 +5,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { MutableRefObject, Suspense, useEffect, useRef, useState } from "react";
 import Model from "./Model";
 import { Camera } from "three";
+import ModelSimple from "./ModelSimple";
 
 interface RotatingHeadProps {
 	material : string,
@@ -14,10 +15,10 @@ const RotatingHead = ({ material } : RotatingHeadProps) => {
 	return ( 
 		<div className='absolute w-full h-full '>
 			<Canvas>
-					{/* <ModelSimple></ModelSimple> */}
-					<Model
+					<ModelSimple></ModelSimple>
+					{/* <Model
 						material={material}
-					/>
+					/> */}
 					{
 						material === "default" ?
 						<>
