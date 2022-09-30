@@ -14,7 +14,7 @@ const About = () => {
 	return (  
 		<div className="w-full h-full">
 			<NavBar back="/"/>
-			<RotatingHead
+			<RotatingHeadNoSSR
 				material={material}
 			/>
 			<div className="absolute w-full h-full 
