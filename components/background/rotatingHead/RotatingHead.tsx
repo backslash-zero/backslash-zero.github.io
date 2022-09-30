@@ -14,8 +14,7 @@ interface RotatingHeadProps {
 const RotatingHead = ({ material } : RotatingHeadProps) => {
 	return ( 
 		<div className='absolute w-full h-full '>
-			<Canvas className=''>
-				<Suspense fallback={null}>
+			<Canvas>
 					<Model
 						material={material}
 					/>
@@ -34,7 +33,6 @@ const RotatingHead = ({ material } : RotatingHeadProps) => {
 						</>
 					}
 					{/* <OrbitControls /> */}
-				</Suspense>
 			</Canvas>
 		</div>
 	 );
