@@ -20,7 +20,7 @@ interface ModelProps {
 }
 
 const Model = ({ props, material }: ModelProps) => {
-	const { nodes, materials } = useGLTF('/assets/gltf/celestin.glb') as any
+	const { nodes, materials } = useGLTF('/celestin.glb') as any
 	const lyonMaterial = new THREE.MeshStandardMaterial(
 		{ 
 			color : "red",
