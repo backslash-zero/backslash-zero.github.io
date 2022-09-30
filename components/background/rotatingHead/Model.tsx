@@ -20,7 +20,7 @@ interface ModelProps {
 }
 
 const Model = ({ props, material }: ModelProps) => {
-	const { nodes, materials } = useGLTF('/celestin.glb') as any
+	var { nodes, materials } = useGLTF('/celestin.glb') as any
 	const lyonMaterial = new THREE.MeshStandardMaterial(
 		{ 
 			color : "red",
@@ -61,10 +61,15 @@ const Model = ({ props, material }: ModelProps) => {
 
   return (
 	<group {...props} dispose={null}>
-	  <mesh
+	  {/* <mesh
 	  		ref={ myMesh }
 	  		geometry={ nodes.celehead.geometry } 
 			material={ assignMaterial(material) }
+		/> */}
+	  <mesh
+	  		ref={ myMesh }
+	  		geometry={ nodes.celehead.geometry } 
+			material={ materials['kt_facebuilder_material.005']}
 		/>
 		<meshStandardMaterial color='black'/>
 	</group>
