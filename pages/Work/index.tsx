@@ -5,7 +5,6 @@ const Work = () => {
 	return (  
 		<>
 			<NavBar back="/"/>
-
 			<UnderConstruction alternateRessourceName="Github" alternateRessourceLink="https://github.com/backslash-zero"/>
 		</>
 	);
