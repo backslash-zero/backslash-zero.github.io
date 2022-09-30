@@ -6,7 +6,9 @@ import RotatingHead from "../../components/background/rotatingHead/RotatingHead"
 
 const RotatingHeadNoSSR = dynamic (
 	() => import('../../components/background/rotatingHead/RotatingHead'),
-	{ ssr: false }
+	{ 
+		ssr: false 
+	}
 )
 
 const About = () => {
@@ -14,7 +16,7 @@ const About = () => {
 	return (  
 		<div className="w-full h-full">
 			<NavBar back="/"/>
-			<RotatingHeadNoSSR
+			<RotatingHead
 				material={material}
 			/>
 			<div className="absolute w-full h-full 
