@@ -6,17 +6,33 @@ import { MutableRefObject, Suspense, useEffect, useRef, useState } from "react";
 import Model from "./Model";
 import { Camera } from "three";
 
+interface RotatingHeadProps {
+	material : string,
+}
 
-const RotatingHead = () => {
+
+const RotatingHead = ({ material } : RotatingHeadProps) => {
 	return ( 
 		<div className='absolute w-full h-full '>
 			<Canvas className=''>
 				<Suspense fallback={null}>
-					<Model/>
-					<pointLight position={[-20, 10, 10]} color={[0,0,255]}	intensity={0.01} />
-					<pointLight position={[0, -10, 10]} color={[0,255,0]}	intensity={0.01} />
-					<pointLight position={[20, 10, 10]} color={[255,0,0]}	intensity={0.01} />
-					{/* <ambientLight intensity={1} /> */}
+					<Model
+						material={material}
+					/>
+					{
+						material === "default" ?
+						<>
+							<pointLight position={[-20, 10, 10]} color={[0,0,255]}	intensity={0.01} />
+							<pointLight position={[0, -10, 10]} color={[0,255,0]}	intensity={0.01} />
+							<pointLight position={[20, 10, 10]} color={[255,0,0]}	intensity={0.01} />
+						</>
+						:
+						<>
+							<pointLight position={[-20, 10, 10]} color={[255,255,255]}	intensity={0.005} />
+							<pointLight position={[0, -10, 10]} color={[255,255,255]}	intensity={0.005} />
+							<pointLight position={[20, 10, 10]} color={[255,255,255]}	intensity={0.005} />
+						</>
+					}
 					{/* <OrbitControls /> */}
 				</Suspense>
 			</Canvas>

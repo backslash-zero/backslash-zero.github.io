@@ -1,8 +1,9 @@
 import * as THREE from 'three'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { ThreeElements, useFrame } from '@react-three/fiber'
+import { MeshStandardMaterial, MeshBasicMaterial } from 'three'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -13,8 +14,30 @@ type GLTFResult = GLTF & {
   }
 }
 
-const Model = (props: JSX.IntrinsicElements['group']) => {
+interface ModelProps {
+	props?: JSX.IntrinsicElements['group'],
+	material : string,
+}
+
+const Model = ({ props, material }: ModelProps) => {
 	const { nodes, materials } = useGLTF('./assets/gltf/celestin.glb') as any
+	const lyonMaterial = new THREE.MeshStandardMaterial(
+		{ 
+			color : "red",
+			roughness : 1,
+			metalness : 1,
+			wireframe: true
+		}
+	)
+	const berlinMaterial = new THREE.MeshStandardMaterial(
+		
+		{ 
+			color : "0x000000",
+			roughness : 0,
+			metalness : 1
+		}
+	)
+	// Rotatition animation
 	let myMesh = React.useRef<any>();
 	useFrame(({ clock }) => {
 	const a = clock.getElapsedTime();
@@ -22,13 +45,28 @@ const Model = (props: JSX.IntrinsicElements['group']) => {
 		myMesh.current.rotation.y = a;
 	});
 
+	const assignMaterial = (materialString : string) : THREE.MeshStandardMaterial =>  {
+		switch (materialString) {
+			case "lyon" : {
+				return (lyonMaterial);
+			}
+			case "berlin" : {
+				return (berlinMaterial);
+			}
+			default : {
+				return (materials['kt_facebuilder_material.005']);
+			}
+		}
+	}
+
   return (
 	<group {...props} dispose={null}>
-	  <mesh 
+	  <mesh
 	  		ref={ myMesh }
-	  		geometry={nodes.celehead.geometry} 
-			material={materials['kt_facebuilder_material.005']}
+	  		geometry={ nodes.celehead.geometry } 
+			material={ assignMaterial(material) }
 		/>
+		<meshStandardMaterial color='black'/>
 	</group>
   )
 }
