@@ -71,6 +71,7 @@ const Model = ({ props, material }: ModelProps) => {
 	  		geometry={ nodes.celehead.geometry } 
 			material={ materials['kt_facebuilder_material.005']}
 		/>
+		<meshStandardMaterial color='black'/>
 	</group>
   )
 }
