@@ -17,14 +17,6 @@ type GLTFResult = GLTF & {
 const ModelSimple = ( props : JSX.IntrinsicElements['group'] ) => {
 	var { nodes, materials } = useGLTF('/celestin.glb') as any
 
-	// Rotatition animation
-	let myMesh = React.useRef<any>();
-	useFrame(({ clock }) => {
-	const a = clock.getElapsedTime();
-	if (myMesh.current)
-		myMesh.current.rotation.y = a;
-	});
-
   return (
 	<group {...props} dispose={null}>
 	  {/* <mesh
@@ -33,14 +25,11 @@ const ModelSimple = ( props : JSX.IntrinsicElements['group'] ) => {
 			material={ assignMaterial(material) }
 		/> */}
 	  <mesh
-	  		ref={ myMesh }
 	  		geometry={ nodes.celehead.geometry } 
 			material={ materials['kt_facebuilder_material.005']}
 		/>
 	</group>
   )
 }
-
-useGLTF.preload('/celestin.glb')
 
 export default ModelSimple
