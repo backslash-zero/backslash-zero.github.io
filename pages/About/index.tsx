@@ -1,16 +1,19 @@
+import dynamic from "next/dynamic";
 import { useState } from "react";
-import RotatingHead from "../../components/background/rotatingHead/RotatingHead";
 import NavBar from "../../components/navbar/NavBar";
 import UnderConstruction from "../../components/tools/UnderConstruction";
 
-
+const RotatingHeadNoSSR = dynamic (
+	() => import('../../components/background/rotatingHead/RotatingHead'),
+	{ ssr: false }
+)
 
 const About = () => {
 	const [material, setMaterial] = useState("default");
 	return (  
 		<div className="w-full h-full">
 			<NavBar back="/"/>
-			<RotatingHead
+			<RotatingHeadNoSSR
 				material={material}
 			/>
 			<div className="absolute w-full h-full 
