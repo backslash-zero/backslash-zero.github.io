@@ -24,8 +24,6 @@ const Model = ({ props, material }: ModelProps) => {
 	const lyonMaterial = new THREE.MeshStandardMaterial(
 		{ 
 			color : "red",
-			roughness : 1,
-			metalness : 1,
 			wireframe: true
 		}
 	)

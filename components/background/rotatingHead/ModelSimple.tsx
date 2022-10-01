@@ -12,24 +12,24 @@ type GLTFResult = GLTF & {
     celehead: THREE.Mesh;
   };
   materials: {
-    ["kt_facebuilder_material.005"]: THREE.MeshStandardMaterial;
+    defaultMaterial: THREE.MeshStandardMaterial;
   };
 };
 
-const Model = (props: JSX.IntrinsicElements["group"]) => {
-  const { nodes, materials } = useGLTF("/celestin.glb") as unknown as GLTFResult;
+export function ModelSimple(props: JSX.IntrinsicElements["group"]) {
+  const { nodes, materials } = useGLTF("/celestin.gltf") as any;
   return (
     <group {...props} dispose={null}>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.celehead.geometry}
-        material={materials["kt_facebuilder_material.005"]}
+        material={materials.defaultMaterial}
       />
     </group>
   );
 }
 
-useGLTF.preload("/celestin.glb");
+useGLTF.preload("/celestin.gltf");
 
-export default Model
+export default ModelSimple
