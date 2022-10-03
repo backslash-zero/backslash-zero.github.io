@@ -7,12 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily : {
-        SuisseIntl : ['SuisseIntl'],
-        SuisseWorks : ['SuisseWorks'],
-        SuisseIntlMono : ['SuisseIntlMono'],
-        sans: ['SuisseIntl', 'sans-serif'],
-        serif: ['SuisseWorks', 'serif'],
-        mono: ['SuisseIntlMono', 'mono'],
+        mono: ['JetBrains Mono', 'mono'],
       }
     },
   },

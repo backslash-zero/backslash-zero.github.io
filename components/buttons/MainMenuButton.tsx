@@ -7,7 +7,7 @@ type MainMenuButtonProps = {
 
 const MainMenuButton = ({name, link} : MainMenuButtonProps) => {
 	return (
-		<span className="font-sans font-semibold text-5xl text-stone-200 hover:blur-sm 
+		<span className="font-mono font-black text-5xl text-stone-200 hover:blur-sm 
 						">
 			<Link href={link}>
 				<a>{name}</a>

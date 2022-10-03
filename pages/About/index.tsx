@@ -25,15 +25,15 @@ const About = () => {
 							font-mono text-stone-100 leading-8">
 				<p>I&apos;m Célestin, <br/>
 				a <a
-					className="text-red-600 underline underline-offset-4"
+					className="font-extrabold"
 					onMouseEnter={() => {setMaterial("lyon")}}
 					onMouseLeave={() => {setMaterial("default")}}
 					>Lyon</a>–born, <a
-					className="text-stone-900 underline underline-offset-4"
+					className="font-extrabold"
 					onMouseEnter={() => {setMaterial("berlin")}}
 					onMouseLeave={() => {setMaterial("default")}}
 					>Berlin</a>–based, Designer, Developer and Media Artist. <br/> 
-				I like to work with code, 3D, video, and photography.<br/>
+				I just finished <a className="font-bold underline underline-offset-4" href="https://42.fr">42 School</a>. and I like to work with code, 3D, video, and photography.<br/>
 				Contact: hello (at) celest.in</p>
 			</div>
 		</div>

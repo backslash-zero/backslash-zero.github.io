@@ -13,7 +13,7 @@ const NavBar = ({ back } : NavBarProps) => {
 						z-10">
 			<div className="p-4 hover:text-stone-900 hover:blur-sm">
 				<Link href={back}>
-					<a>&#8592; back</a>
+					<a>&#60;- back</a>
 				</Link>
 			</div>
 		</div>
