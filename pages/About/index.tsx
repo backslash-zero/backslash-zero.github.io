@@ -23,18 +23,24 @@ const About = () => {
 							flex flex-col items-center justify-center
 							p-4
 							font-mono text-stone-100 leading-8">
-				<p>I&apos;m Célestin, <br/>
-				a <a
-					className="font-extrabold"
-					onMouseEnter={() => {setMaterial("lyon")}}
-					onMouseLeave={() => {setMaterial("default")}}
-					>Lyon</a>–born, <a
-					className="font-extrabold"
-					onMouseEnter={() => {setMaterial("berlin")}}
-					onMouseLeave={() => {setMaterial("default")}}
-					>Berlin</a>–based, Designer, Developer and Media Artist. <br/> 
-				I just finished <a className="font-bold underline underline-offset-4" href="https://42.fr">42 School</a>. and I like to work with code, 3D, video, and photography.<br/>
-				Contact: hello (at) celest.in</p>
+				<div>
+					<p>I&apos;m Célestin, <br/>
+					a <a
+						className="font-extrabold"
+						onMouseEnter={() => {setMaterial("lyon")}}
+						onMouseLeave={() => {setMaterial("default")}}
+						>Lyon</a>–born, <a
+						className="font-extrabold"
+						onMouseEnter={() => {setMaterial("berlin")}}
+						onMouseLeave={() => {setMaterial("default")}}
+						>Berlin</a>–based, Designer, Developer and Media Artist. <br/> 
+					I just finished the <i>common-core</i> of <a className="font-bold underline underline-offset-4" href="https://42.fr">42 School</a> and I like to work with code, 3D, video, and photography.<br/>
+					Contact: hello (at) celest.in</p>
+					<a className="font-bold underline underline-offset-4 hover:blue-sm" href="https://www.instagram.com/cele_stin">insta</a>
+					<a className="font-bold underline underline-offset-4 hover:blue-sm" href="https://www.github.com/backslash-zero">github</a>
+				</div>
+				<div>
+				</div>
 			</div>
 		</div>
 	);
