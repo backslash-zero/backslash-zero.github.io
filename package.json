@@ -16,8 +16,8 @@
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-three": "^0.8.0",
-    "three": "^0.144.0"
+    "react-three": "^0.9.7",
+    "three": "^0.145.0"
   },
   "devDependencies": {
     "@types/node": "^18.7.23",
@@ -29,6 +29,6 @@
     "eslint-config-next": "12.3.1",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8",
-    "typescript": "4.8.3"
+    "typescript": "^4.8.4"
   }
 }
