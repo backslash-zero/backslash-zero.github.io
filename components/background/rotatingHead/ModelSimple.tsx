@@ -23,7 +23,7 @@ interface ModelSimpleProps {
 }
 
 export function ModelSimple({ props, material }: ModelSimpleProps) {
-  const { nodes, materials } = useGLTF("/celestin.gltf") as any;
+  const { nodes, materials } = useGLTF("celestin.gltf") as any;
   const lyonMaterial = new THREE.MeshStandardMaterial(
 		{ 
 			color : "red",
@@ -71,6 +71,6 @@ export function ModelSimple({ props, material }: ModelSimpleProps) {
   );
 }
 
-useGLTF.preload("/celestin.gltf");
+useGLTF.preload("celestin.gltf");
 
 export default ModelSimple

@@ -1,10 +1,4 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useLoader } from "@react-three/fiber";
-import { Environment, OrbitControls } from "@react-three/drei";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { MutableRefObject, Suspense, useEffect, useRef, useState } from "react";
-import Model from "./Model";
-import { Camera } from "three";
 import ModelSimple from "./ModelSimple";
 
 interface RotatingHeadProps {
