@@ -33,7 +33,7 @@ export function ModelSimple({ props, material }: ModelSimpleProps) {
 	const berlinMaterial = new THREE.MeshStandardMaterial(
 		
 		{ 
-			color : "0x000000",
+			color : "black",
 			roughness : 0,
 			metalness : 1
 		}
