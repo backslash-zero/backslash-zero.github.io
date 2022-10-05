@@ -76,9 +76,9 @@
 							"Socket.io",
 							"Docker"
 						],
-						"repo" : "https://github.com/backslash-zero/42-ft_transcendance",
+						"repo" : "https://github.com/backslash-zero/42-ft_transcendence",
 						"assets": {},
-						"tagline ": "Final Common-core 42 Paris project. Full-stack web application: multiplayer online Pong game ",
+						"tagline ": "Final Common-core 42 Paris project. Full-stack web application in TypeScript: multiplayer online Pong game.",
 						"example" : "https://frontend-transcendence.herokuapp.com/"
 					},
 					"minit_rt": {
@@ -109,7 +109,7 @@
 						],
 						"repo" : "https://github.com/backslash-zero/42-Minishell",
 						"assets": {},
-						"tagline ": "Homemade simplified shell that replicates behaviours from bash."
+						"tagline ": "Shell from scratch that replicates behaviours from bash."
 					}
 				}
 			}
@@ -151,7 +151,7 @@
 				"dates" : ["2019","2020"],
 				"institution" : "Join.com",
 				"Location" : "Berlin, Germany",
-				"tagline" : "Sourcing and Candidate Interviews"
+				"tagline" : "UI, UX, and graphic design. "
 			},
 			"Creative Manager" : {
 				"dates" : ["2015","2017"],
