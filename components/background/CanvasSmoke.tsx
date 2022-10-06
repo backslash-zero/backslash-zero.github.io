@@ -5,16 +5,21 @@ import SmokeMachine from '@bijection/smoke'
 const drawSmoke = (ctx : CanvasRenderingContext2D) => {
 	const canvas = ctx.canvas;
 	const smokeColor : number[] = [80, 80, 80]
-	const ammount = 5;
+	const ammountGenerators = 5;
+	let ammountSmoke = (0.1 * canvas.width / 800);
 	const party = SmokeMachine(ctx, smokeColor)
 	
+	const options = {
+		minLifetime: 8000,
+		maxLifetime: 12000,
+	}
+
 	party.step(1000)
 	party.start()
 	party.setPreDrawCallback(() => {
-		for(var i=0; i<=ammount;i++){
-				// party.addSmoke(x,y, ammount, options) 
-				party.addSmoke((canvas.width/ammount) * i, canvas.height * 1.2, (Math.cos(i) + 2) * 0.1)
-        }
+		for(var i = 0; i <= ammountGenerators; i++){
+				party.addSmoke((canvas.width/ammountGenerators) * i, canvas.height * 1.2, ammountSmoke, options);
+		}
     })
 }
 
