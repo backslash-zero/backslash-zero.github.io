@@ -28,17 +28,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Setting environement variables
+      - name: Setting Environement Variables
         run: 
-          touch .env.local
-          echo NOTION_API_KEY=${{ secrets.NOTION_API_KEY }} >> .env.local
-          echo NOTION_BLOCK_ID=${{ secrets.NOTION_BLOCK_ID }} >> .env.local
-          echo NOTION_INFOS_ID=${{ secrets.NOTION_INFOS_ID }} >> .env.local
-          echo NOTION_SKILLS_ID=${{ secrets.NOTION_SKILLS_ID }} >> .env.local
-          echo NOTION_CODE_ID=${{ secrets.NOTION_CODE_ID }} >> .env.local
-          echo NOTION_STUDIES_ID=${{ secrets.NOTION_STUDIES_ID }} >> .env.local
-          echo NOTION_PRO_ID=${{ secrets.NOTION_PRO_ID }} >> .env.local
-          echo NOTION_OUTSIDE_ID=${{ secrets.NOTION_OUTSIDE_ID }} >> .env.local
+          touch .env
+          echo NOTION_API_KEY=${{ secrets.NOTION_API_KEY }} >> .env
+          echo NOTION_BLOCK_ID=${{ secrets.NOTION_BLOCK_ID }} >> .env
+          echo NOTION_INFOS_ID=${{ secrets.NOTION_INFOS_ID }} >> .env
+          echo NOTION_SKILLS_ID=${{ secrets.NOTION_SKILLS_ID }} >> .env
+          echo NOTION_CODE_ID=${{ secrets.NOTION_CODE_ID }} >> .env
+          echo NOTION_STUDIES_ID=${{ secrets.NOTION_STUDIES_ID }} >> .env
+          echo NOTION_PRO_ID=${{ secrets.NOTION_PRO_ID }} >> .env
+          echo NOTION_OUTSIDE_ID=${{ secrets.NOTION_OUTSIDE_ID }} >> .env
       - name: Checkout
         uses: actions/checkout@v3
       - name: Detect package manager

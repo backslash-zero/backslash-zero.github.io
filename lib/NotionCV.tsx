@@ -63,7 +63,7 @@ const getInfos = async() =>  {
 			}
 		)
 	}
-	console.log(infosProperties)
+	// console.log(infosProperties)
 	return (infosProperties)
 }
 

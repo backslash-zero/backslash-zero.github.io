@@ -9,8 +9,6 @@ interface cvProps {
 }
 
 const cv = (props : cvProps) => {
-
-	console.log(props)
 	
 	const infos = props.infos.map(
 		(infoLine, idx) => {
