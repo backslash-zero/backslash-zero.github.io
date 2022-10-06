@@ -28,6 +28,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Setting environement variables
+        env: 
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_BLOCK_ID: ${{ secrets.NOTION_BLOCK_ID }}
+          NOTION_INFOS_ID: ${{ secrets.NOTION_INFOS_ID }}
+          NOTION_SKILLS_ID: ${{ secrets.NOTION_SKILLS_ID }}
+          NOTION_CODE_ID: ${{ secrets.NOTION_CODE_ID }}
+          NOTION_STUDIES_ID: ${{ secrets.NOTION_STUDIES_ID }}
+          NOTION_PRO_ID: ${{ secrets.NOTION_PRO_ID }}
+          NOTION_OUTSIDE_ID: ${{ secrets.NOTION_OUTSIDE_ID }}
       - name: Checkout
         uses: actions/checkout@v3
       - name: Detect package manager
