@@ -3,6 +3,7 @@ import { useState } from "react";
 import NavBar from "../../components/navbar/NavBar";
 import UnderConstruction from "../../components/tools/UnderConstruction";
 import RotatingHead from "../../components/background/rotatingHead/RotatingHead";
+import Link from "next/link";
 
 const RotatingHeadNoSSR = dynamic (
 	() => import('../../components/background/rotatingHead/RotatingHead'),
@@ -36,7 +37,7 @@ const About = () => {
 						>Berlin</a>–based, Designer, Developer and Media Artist. <br/> 
 					I just finished the <i>common-core</i> of <a className="font-bold underline underline-offset-4" href="https://42.fr">42 School</a> and I like to work with code, 3D, video, and photography.<br/>
 					Contact: hello (at) celest.in</p>
-					<p><a className="font-bold underline underline-offset-4 hover:blur-sm" href="https://www.instagram.com/cele_stin">insta</a> <a className="font-bold underline underline-offset-4 hover:blur-sm" href="https://www.github.com/backslash-zero">github</a></p>
+					<p><a className="font-bold underline underline-offset-4 hover:blur-sm" href="https://www.instagram.com/cele_stin">insta</a> <a className="font-bold underline underline-offset-4 hover:blur-sm" href="https://www.github.com/backslash-zero">github</a> <Link href="/cv"><a className="font-bold underline underline-offset-4 hover:blur-sm">cv</a></Link></p>
 				</div>
 				<div>
 				</div>

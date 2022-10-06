@@ -6,7 +6,7 @@ const drawSmoke = (ctx : CanvasRenderingContext2D) => {
 	const canvas = ctx.canvas;
 	const smokeColor : number[] = [80, 80, 80]
 	const ammountGenerators = 5;
-	let ammountSmoke = (0.1 * canvas.width / 800);
+	let ammountSmoke = (0.1 * canvas.width / 500);
 	const party = SmokeMachine(ctx, smokeColor)
 	
 	const options = {
