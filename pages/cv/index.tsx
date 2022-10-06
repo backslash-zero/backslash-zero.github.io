@@ -125,10 +125,45 @@ const cv = (props : cvProps) => {
 	)
 	
 	const Studies = props.studies.map(
-		(infgoLine, idx) => {
+		(infoLine, idx) => {
 			return (
-				<div key="idx">
+				<div key="idx" className="	p-2
+											outline outline-1 outline-stone-800 
+											flex flex-col gap-2
+											">
+					<div className=" flex justify-between
+									text-xs">
+						<p>
+							{ infoLine['Date Start'].rich_text[0].plain_text } – { infoLine['Date End'].rich_text[0].plain_text }  
+						</p>
+						<p>
+							{  infoLine.Location.rich_text[0].plain_text }
+						</p>
+					</div>
+					<div>
+						{
+							infoLine.Link.rich_text[0] ?
+							<a className="underline underline-offset-4" href={infoLine.Link.rich_text[0].plain_text}>
+								{ infoLine.Institution.rich_text[0].plain_text } 
+							</a>
+							:
+							<p className="">
+								{ infoLine.Institution.rich_text[0].plain_text } 
+							</p>
 
+						}
+						{
+							infoLine.Name.title[0] &&
+							<p>
+								: { infoLine.Name.title[0].plain_text }
+							</p>
+						}
+					</div>
+					<div className="text-sm">
+						<p>
+							{  infoLine['Tag Line'].rich_text[0].plain_text }
+						</p>
+					</div>
 				</div>
 			)
 		}
@@ -199,29 +234,34 @@ const cv = (props : cvProps) => {
 				</div>
 				<div className="">
 					<h3 className="" 
-					>Other</h3>
+					>📁 Other</h3>
 					{ skillsOther  }
 				</div>
 			</div>
 			<div className="flex flex-col gap-4">
-
+				<div>
+					<h2 className="text-lg font-bold"> Studies </h2>
+					<div className="flex flex-col gap-4">
+						{ Studies }
+					</div>
+				</div>
 			</div>
 		</div>
 	 );
 }
 
 export async function getStaticProps() {
-	// get infos
-	let infos = await getInfos()
-	let skillsLanguages = await getSkillsLanguages()
-	let skillsProg = await getSkillsProg()
-	let skillsTechs = await getSkillsTechs()
-	let skillsSoft = await getSkillsSoft()
-	let skillsOther = await getSkillsOther()
-	let studies = await getStudies()
-	let pro = await getPro()
-	let outside = await getOutside()
-	let codeprojects = await getCodeProjects()
+	
+	let infos			= await getInfos()
+	let skillsLanguages	= await getSkillsLanguages()
+	let skillsProg		= await getSkillsProg()
+	let skillsTechs		= await getSkillsTechs()
+	let skillsSoft		= await getSkillsSoft()
+	let skillsOther		= await getSkillsOther()
+	let studies			= await getStudies()
+	let pro				= await getPro()
+	let outside			= await getOutside()
+	let codeprojects	= await getCodeProjects()
 
 	return {
 		props : {
