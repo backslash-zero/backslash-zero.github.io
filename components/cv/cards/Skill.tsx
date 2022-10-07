@@ -3,15 +3,17 @@ interface SkillsProps {
 	last: boolean
 }
 
-const Skills = ({content, last} : SkillsProps) => {
+const Skill = ({content, last} : SkillsProps) => {
 	return ( 
 		<div>
-			<p>
-				{ last ? "└── " : "├── "}
-				{ content }
-			</p>
+				<p className="inline text-stone-800/50">
+					{ last ? "└── " : "├── "}
+				</p>
+				<p className="inline text-stone-800">
+					{ content }
+				</p>
 		</div>
 	 );
 }
 
-export default Skills;
+export default Skill;

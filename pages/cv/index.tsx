@@ -1,5 +1,6 @@
 
 import { NextPage } from "next";
+import Info from "../../components/cv/cards/Info";
 import Skill from "../../components/cv/cards/Skill";
 import { 
 	getInfos,
@@ -41,17 +42,7 @@ const cv = (props : cvProps) => {
 		(infoLine, idx) => {
 			return (
 				infoLine.checkbox.checkbox &&
-				<div key={infoLine.id} className=""> 
-				{
-					infoLine.link.url == null ?
-						<p>{ infoLine.value.rich_text[0].plain_text }</p>
-					:
-						<a  className="underline underline-offset-4"
-							href={infoLine.link.url}
-							>{ infoLine.value.rich_text[0].plain_text }
-						</a>
-				}
-				</div>
+				<Info key={infoLine.id} url={infoLine.link.url} content={infoLine.value.rich_text[0].plain_text}/>
 			)
 		}
 	)
@@ -122,7 +113,6 @@ const cv = (props : cvProps) => {
 				<div key={infoLine.id} className="	p-2
 											outline outline-1 outline-stone-800 
 											flex flex-col gap-2
-											w-full md:w-1/2
 											">
 					<div className=" flex justify-between
 									text-xs">
@@ -161,7 +151,6 @@ const cv = (props : cvProps) => {
 				<div key={infoLine.id} className="	p-2
 											outline outline-1 outline-stone-800 
 											flex flex-col gap-2
-											w-full md:w-1/2
 											">
 					<div className=" flex justify-between
 									text-xs">
@@ -198,7 +187,6 @@ const cv = (props : cvProps) => {
 				<div key={infoLine.id} className="	p-2
 											outline outline-1 outline-stone-800 
 											flex flex-col gap-2
-											w-full md:w-1/2
 											">
 					<div className=" flex gap-2 flex-wrap
 									text-xs">
@@ -251,7 +239,6 @@ const cv = (props : cvProps) => {
 				<div key={infoLine.id} className="	relative p-2
 											outline outline-1 outline-stone-800 
 											flex flex-col gap-2
-											w-full md:w-1/2
 											">
 					<div className="flex justify-between">
 						<p className="">
@@ -285,71 +272,75 @@ const cv = (props : cvProps) => {
 
 		<div className="w-full h-full absolute overflow-scroll
 						p-8
-						flex flex-col gap-8 
-						md:flex-row
 						font-mono text-stone-800">
-			<div className="
-				w-full
-				flex flex-col gap-4">
-				<p className="">Célestin Meunier</p>
-				{ infos }
+			<div className="max-w-7xl
+							md:p-8 md:outline md:outline-1 md:outline-stone-800 md:m-auto
+							grid md:grid-cols-[1fr_200px]
+							gap-4">
 				<div>
-					<h2 className="text-lg font-extralight"> Studies </h2>
-					<div className="flex flex-col gap-4
-									md:flex-row flex-wrap">
-						{ Studies }
+					<p className="">Célestin Meunier</p>
+					{ infos }
+				</div>
+				<div className="
+					flex flex-col
+					col-span-1
+					row-span-2
+				">
+					<div className="w-full">
+						<h3 className="" 
+						>📁 Languages</h3>
+						{ skillsLanguages  }
+					</div>
+					<div className="w-full">
+						<h3 className="" 
+						>📁 Programming</h3>
+						{ skillsProg }
+					</div>
+					<div className="w-full">
+						<h3 className="" 
+						>📁 🤍 Technologies</h3>
+						{ skillsTechs  }
+					</div>
+					<div className="w-full">
+						<h3 className="" 
+						>📁 🤍 Software</h3>
+						{ skillsSoft  }
+					</div>
+					<div className="w-full">
+						<h3 className="" 
+						>📁 Other</h3>
+						{ skillsOther  }
 					</div>
 				</div>
-				<div>
-					<h2 className="text-lg font-extralight"> Professional Experiences </h2>
-					<div className="flex flex-col gap-4
-										md:flex-row flex-wrap">
-						{ Pro }
+				<div className="flex flex-col gap-4">
+					<div className="flex flex-col gap-4">
+						<h2 className="text font"> Studies </h2>
+						<div className="w-full h-[1px] bg-stone-800"></div>
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+							{ Studies }
+						</div>
 					</div>
-				</div>
-				<div>
-					<h2 className="text-lg font-extralight"> Code Projects </h2>
-					<div className="flex flex-col gap-4
-										md:flex-row flex-wrap">
-						{ CodeProjects }
+					<div className="flex flex-col gap-4">
+						<h2 className="text font"> Professional Experiences </h2>
+						<div className="w-full h-[1px] bg-stone-800"></div>
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+							{ Pro }
+						</div>
 					</div>
-				</div>
-				<div>
-					<h2 className="text-lg font-extralight"> Outside of work </h2>
-					<div className="flex flex-col gap-4
-										md:flex-row flex-wrap">
-						{ Outside }
+					<div className="flex flex-col gap-4">
+						<h2 className="text font"> Code Projects </h2>
+						<div className="w-full h-[1px] bg-stone-800"></div>
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+							{ CodeProjects }
+						</div>
 					</div>
-				</div>
-			</div>
-			<div className="
-				flex flex-col
-				w-full
-			">
-				<div className="w-full">
-					<h3 className="" 
-					>📁 Languages</h3>
-					{ skillsLanguages  }
-				</div>
-				<div className="w-full">
-					<h3 className="" 
-					>📁 Programming</h3>
-					{ skillsProg }
-				</div>
-				<div className="w-full">
-					<h3 className="" 
-					>📁 🤍 Technologies</h3>
-					{ skillsTechs  }
-				</div>
-				<div className="w-full">
-					<h3 className="" 
-					>📁 🤍 Software</h3>
-					{ skillsSoft  }
-				</div>
-				<div className="w-full">
-					<h3 className="" 
-					>📁 Other</h3>
-					{ skillsOther  }
+					<div className="flex flex-col gap-4">
+						<h2 className="text font"> Outside of work </h2>
+						<div className="w-full h-[1px] bg-stone-800"></div>
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+							{ Outside }
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
