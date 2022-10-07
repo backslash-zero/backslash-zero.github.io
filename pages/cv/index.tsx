@@ -1,5 +1,6 @@
 
 import { NextPage } from "next";
+import Skill from "../../components/cv/cards/Skill";
 import { 
 	getInfos,
 	getSkillsLanguages, 
@@ -30,6 +31,7 @@ interface cvProps {
 
 const cv = (props : cvProps) => {
 
+	console.log(props.infos)
 	console.log(props.studies)
 	console.log(props.pro)
 	console.log(props.outside)
@@ -39,7 +41,7 @@ const cv = (props : cvProps) => {
 		(infoLine, idx) => {
 			return (
 				infoLine.checkbox.checkbox &&
-				<div key={idx} className=""> 
+				<div key={infoLine.id} className=""> 
 				{
 					infoLine.link.url == null ?
 						<p>{ infoLine.value.rich_text[0].plain_text }</p>
@@ -57,13 +59,11 @@ const cv = (props : cvProps) => {
 	const skillsLanguages = props.skillsLanguages.map(
 		(infoLine, idx) => {
 			return (
-				<div key={idx}>
-					<p>
-						{
-							idx !== props.skillsLanguages.length - 1 ? "├── " : "└── "
-						}
-						{ infoLine.Name.title[0].plain_text } : { infoLine.Value.rich_text[0].plain_text }</p>
-				</div>
+				<Skill 
+					key={infoLine.id} 
+					last={idx === props.skillsLanguages.length - 1} 
+					content={ infoLine.Name.title[0].plain_text  + " : " + infoLine.Value.rich_text[0].plain_text }
+				/>
 			)
 		}
 	)
@@ -71,13 +71,11 @@ const cv = (props : cvProps) => {
 	const skillsProg = props.skillsProg.map(
 		(infoLine, idx) => {
 			return (
-				<div key={idx}>
-					<p>
-						{
-							idx !== props.skillsProg.length - 1 ? "├── " : "└── "
-						}
-						{ infoLine.Name.title[0].plain_text } </p>
-				</div>
+				<Skill 
+					key={infoLine.id} 
+					last={idx === props.skillsProg.length - 1} 
+					content={ infoLine.Name.title[0].plain_text }
+				/>
 			)
 		}
 	)
@@ -85,13 +83,11 @@ const cv = (props : cvProps) => {
 	const skillsTechs = props.skillsTechs.map(
 		(infoLine, idx) => {
 			return (
-				<div key={idx}>
-					<p>
-						{
-							idx !== props.skillsTechs.length - 1 ? "├── " : "└── "
-						}
-						{ infoLine.Name.title[0].plain_text } </p>
-				</div>
+				<Skill 
+					key={infoLine.id} 
+					last={idx === props.skillsTechs.length - 1} 
+					content={ infoLine.Name.title[0].plain_text }
+				/>
 			)
 		}
 	)
@@ -99,13 +95,11 @@ const cv = (props : cvProps) => {
 	const skillsSoft = props.skillsSoft.map(
 		(infoLine, idx) => {
 			return (
-				<div key={idx}>
-					<p>
-						{
-							idx !== props.skillsSoft.length - 1 ? "├── " : "└── "
-						}
-						{ infoLine.Name.title[0].plain_text } </p>
-				</div>
+				<Skill 
+					key={infoLine.id} 
+					last={idx === props.skillsSoft.length - 1} 
+					content={ infoLine.Name.title[0].plain_text }
+				/>
 			)
 		}
 	)
@@ -113,13 +107,11 @@ const cv = (props : cvProps) => {
 	const skillsOther = props.skillsOther.map(
 		(infoLine, idx) => {
 			return (
-				<div key={idx}>
-					<p>
-						{
-							idx !== props.skillsOther.length - 1 ? "├── " : "└── "
-						}
-						{ infoLine.Name.title[0].plain_text } </p>
-				</div>
+				<Skill 
+					key={infoLine.id} 
+					last={idx === props.skillsOther.length - 1} 
+					content={ infoLine.Name.title[0].plain_text }
+				/>
 			)
 		}
 	)
@@ -127,9 +119,10 @@ const cv = (props : cvProps) => {
 	const Studies = props.studies.map(
 		(infoLine, idx) => {
 			return (
-				<div key="idx" className="	p-2
+				<div key={infoLine.id} className="	p-2
 											outline outline-1 outline-stone-800 
 											flex flex-col gap-2
+											w-full md:w-1/2
 											">
 					<div className=" flex justify-between
 									text-xs">
@@ -152,16 +145,10 @@ const cv = (props : cvProps) => {
 							</p>
 
 						}
-						{
-							infoLine.Name.title[0] &&
-							<p>
-								: { infoLine.Name.title[0].plain_text }
-							</p>
-						}
 					</div>
 					<div className="text-sm">
 						<p>
-							{  infoLine['Tag Line'].rich_text[0].plain_text }
+							{  infoLine['Tagline'].rich_text[0].plain_text }
 						</p>
 					</div>
 				</div>
@@ -169,81 +156,200 @@ const cv = (props : cvProps) => {
 		}
 	)
 	const Pro = props.pro.map(
-		(infgoLine, idx) => {
+		(infoLine, idx) => {
 			return (
-				<div key="idx">
-
-				</div>
-			)
-		}
-	)
-	const Outside = props.outside.map(
-		(infgoLine, idx) => {
-			return (
-				<div key="idx">
-
+				<div key={infoLine.id} className="	p-2
+											outline outline-1 outline-stone-800 
+											flex flex-col gap-2
+											w-full md:w-1/2
+											">
+					<div className=" flex justify-between
+									text-xs">
+						<p>
+							{ infoLine['Date Start'].rich_text[0].plain_text } – { infoLine['Date End'].rich_text[0].plain_text }  
+						</p>
+						<p>
+							{  infoLine.Location.rich_text[0].plain_text }
+						</p>
+					</div>
+					<div>
+						<p className="">
+							{ infoLine.Name.title[0].plain_text } 
+						</p>
+						<p className="font-extralight text-sm">
+							{ 
+								infoLine.Institution.rich_text[0] && 
+								infoLine.Institution.rich_text[0].plain_text 
+							} 
+						</p>
+					</div>
+					<div className="text-sm">
+						<p>
+							{  infoLine.Tagline.rich_text[0].plain_text }
+						</p>
+					</div>
 				</div>
 			)
 		}
 	)
 	const CodeProjects = props.codeprojects.map(
-		(infgoLine, idx) => {
+		(infoLine, idx) => {
 			return (
-				<div key="idx">
-
+				<div key={infoLine.id} className="	p-2
+											outline outline-1 outline-stone-800 
+											flex flex-col gap-2
+											w-full md:w-1/2
+											">
+					<div className=" flex gap-2 flex-wrap
+									text-xs">
+						{ 
+							infoLine.Technologies.multi_select.map(
+								(technology : any) => {
+									return(
+										<div
+											className={` p-1 pr-2 pl-2 bg-${technology.color} outline-1 outline rounded-md`}
+											key={technology.id}> 
+											{ technology.name }
+										</div>
+									)
+								}
+							) 
+						}
+					</div>
+					<div>
+						<p className="">
+							{ infoLine.Name.title[0].plain_text } 
+						</p>
+					</div>
+					<div className="text-sm">
+						<p>
+							{  infoLine.Tagline.rich_text[0].plain_text }
+						</p>
+					</div>
+					<div className="text-sm underline underline-offset-4 
+									flex gap-2">
+						{
+							infoLine.repo.url && 
+							<a href={infoLine.repo.url}>
+								repo
+							</a>
+						}
+						{
+							infoLine.Deployed.url && 
+							<a href={infoLine.Deployed.url}>
+								page
+							</a>
+						}
+					</div>
 				</div>
 			)
 		}
 	)
-
+	const Outside = props.outside.map(
+		(infoLine, idx) => {
+			return (
+				<div key={infoLine.id} className="	relative p-2
+											outline outline-1 outline-stone-800 
+											flex flex-col gap-2
+											w-full md:w-1/2
+											">
+					<div className="flex justify-between">
+						<p className="">
+							{ infoLine.Name.title[0].plain_text } 
+						</p>
+						<p className="text-xs">
+							{  infoLine.Location.rich_text[0].plain_text }
+						</p>
+					</div>
+					<div className="text-sm">
+						<p>
+							{  infoLine.Text.rich_text[0].plain_text }
+						</p>
+					</div>
+					<div className="text-sm underline underline-offset-4 
+									flex gap-2">
+						{
+							infoLine.Link.url && 
+							<a href={infoLine.Link.url}>
+								{infoLine.Link.url}
+							</a>
+						}
+					</div>
+				</div>
+			)
+		}
+	)
+		
 
 	return ( 
 
 		<div className="w-full h-full absolute overflow-scroll
 						p-8
-						flex flex-col gap-8
+						flex flex-col gap-8 
+						md:flex-row
 						font-mono text-stone-800">
 			<div className="
-				flex flex-col gap-4
-			">
+				w-full
+				flex flex-col gap-4">
 				<p className="">Célestin Meunier</p>
 				{ infos }
+				<div>
+					<h2 className="text-lg font-extralight"> Studies </h2>
+					<div className="flex flex-col gap-4
+									md:flex-row flex-wrap">
+						{ Studies }
+					</div>
+				</div>
+				<div>
+					<h2 className="text-lg font-extralight"> Professional Experiences </h2>
+					<div className="flex flex-col gap-4
+										md:flex-row flex-wrap">
+						{ Pro }
+					</div>
+				</div>
+				<div>
+					<h2 className="text-lg font-extralight"> Code Projects </h2>
+					<div className="flex flex-col gap-4
+										md:flex-row flex-wrap">
+						{ CodeProjects }
+					</div>
+				</div>
+				<div>
+					<h2 className="text-lg font-extralight"> Outside of work </h2>
+					<div className="flex flex-col gap-4
+										md:flex-row flex-wrap">
+						{ Outside }
+					</div>
+				</div>
 			</div>
 			<div className="
-				flex flex-col gap-4
+				flex flex-col
+				w-full
 			">
-				<div className="">
+				<div className="w-full">
 					<h3 className="" 
 					>📁 Languages</h3>
 					{ skillsLanguages  }
 				</div>
-				<div className="">
+				<div className="w-full">
 					<h3 className="" 
 					>📁 Programming</h3>
 					{ skillsProg }
 				</div>
-				<div className="">
+				<div className="w-full">
 					<h3 className="" 
 					>📁 🤍 Technologies</h3>
 					{ skillsTechs  }
 				</div>
-				<div className="">
+				<div className="w-full">
 					<h3 className="" 
 					>📁 🤍 Software</h3>
 					{ skillsSoft  }
 				</div>
-				<div className="">
+				<div className="w-full">
 					<h3 className="" 
 					>📁 Other</h3>
 					{ skillsOther  }
-				</div>
-			</div>
-			<div className="flex flex-col gap-4">
-				<div>
-					<h2 className="text-lg font-bold"> Studies </h2>
-					<div className="flex flex-col gap-4">
-						{ Studies }
-					</div>
 				</div>
 			</div>
 		</div>
