@@ -7,8 +7,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily : {
-        mono: ['JetBrains Mono', 'mono'],
-				serif: ['Crimson Text', 'serif']
+        Crimson : ['Crimson Text'],
+        JetBrains : ['JetBrains Mono'],
+        mono: ['JetBrains', 'mono','monospace'],
+				serif: ['Crimson', 'serif']
       }
     },
   },

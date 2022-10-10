@@ -2,6 +2,7 @@
 import { NextPage } from "next";
 import Info from "../../components/cv/cards/Info";
 import Skill from "../../components/cv/cards/Skill";
+import SeparatorCV from "../../components/tools/SeparatorCV";
 import { 
 	getInfos,
 	getSkillsLanguages, 
@@ -313,30 +314,30 @@ const cv = (props : cvProps) => {
 					</div>
 				</div>
 				<div className="flex flex-col gap-4">
-					<div className="flex flex-col gap-4">
+					<div className="flex flex-col">
 						<h2 className="text font"> Studies </h2>
-						<div className="w-full h-[1px] bg-stone-800"></div>
+						<SeparatorCV/>
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
 							{ Studies }
 						</div>
 					</div>
-					<div className="flex flex-col gap-4">
+					<div className="flex flex-col">
 						<h2 className="text font"> Professional Experiences </h2>
-						<div className="w-full h-[1px] bg-stone-800"></div>
+						<SeparatorCV/>
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
 							{ Pro }
 						</div>
 					</div>
-					<div className="flex flex-col gap-4">
+					<div className="flex flex-col">
 						<h2 className="text font"> Code Projects </h2>
-						<div className="w-full h-[1px] bg-stone-800"></div>
+						<SeparatorCV/>
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
 							{ CodeProjects }
 						</div>
 					</div>
-					<div className="flex flex-col gap-4">
+					<div className="flex flex-col">
 						<h2 className="text font"> Outside of work </h2>
-						<div className="w-full h-[1px] bg-stone-800"></div>
+						<SeparatorCV/>
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
 							{ Outside }
 						</div>
