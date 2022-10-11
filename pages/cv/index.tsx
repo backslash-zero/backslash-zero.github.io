@@ -33,12 +33,6 @@ interface cvProps {
 
 const cv = (props : cvProps) => {
 
-	console.log(props.infos)
-	console.log(props.studies)
-	console.log(props.pro)
-	console.log(props.outside)
-	console.log(props.codeprojects)
-
 	const infos = props.infos.map(
 		(infoLine, idx) => {
 			return (
@@ -237,6 +231,7 @@ const cv = (props : cvProps) => {
 	const Outside = props.outside.map(
 		(infoLine, idx) => {
 			return (
+
 				<div key={infoLine.id} className="	relative p-2
 											outline outline-1 outline-stone-800 
 											flex flex-col gap-2
@@ -271,11 +266,14 @@ const cv = (props : cvProps) => {
 
 	return ( 
 
-		<div className="w-full h-full absolute overflow-scroll
-						p-8
+		<div className="w-full
+						absolute bottom-0
+						h-full
+						md:p-8
+						overflow-scroll
 						font-JetBrains text-stone-800">
 			<div className="max-w-7xl
-							md:p-8 md:outline md:outline-1 md:outline-stone-800 md:m-auto
+							p-8 md:outline md:outline-1 md:outline-stone-800 md:m-auto
 							grid md:grid-cols-[1fr_200px]
 							gap-4">
 				<div>
@@ -316,28 +314,28 @@ const cv = (props : cvProps) => {
 				<div className="flex flex-col gap-4">
 					<div className="flex flex-col">
 						<h2 className="text font"> Studies </h2>
-						<SeparatorCV/>
+						{/* <SeparatorCV/> */}
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
 							{ Studies }
 						</div>
 					</div>
 					<div className="flex flex-col">
 						<h2 className="text font"> Professional Experiences </h2>
-						<SeparatorCV/>
+						{/* <SeparatorCV/> */}
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
 							{ Pro }
 						</div>
 					</div>
 					<div className="flex flex-col">
 						<h2 className="text font"> Code Projects </h2>
-						<SeparatorCV/>
+						{/* <SeparatorCV/> */}
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
 							{ CodeProjects }
 						</div>
 					</div>
 					<div className="flex flex-col">
 						<h2 className="text font"> Outside of work </h2>
-						<SeparatorCV/>
+						{/* <SeparatorCV/> */}
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
 							{ Outside }
 						</div>
