@@ -9,7 +9,7 @@ const UnderConstruction = ({alternateRessourceLink, alternateRessourceName} : Un
 		<div className="w-full h-full absolute
 						flex flex-col items-center justify-center" >
 			<div className="p-8 
-							font-mono font-normal leading-8 text-stone-100 ">
+							font-JetBrains font-normal leading-8 text-stone-100 ">
 				<p className="text-5xl mb-2">🛠</p>
 				<p>Sorry, this page is under construction at the moment.</p>
 				{ 

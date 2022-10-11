@@ -23,7 +23,7 @@ const About = () => {
 			<div className="absolute w-full h-full 
 							flex flex-col items-center justify-center
 							p-4
-							font-mono text-stone-100 leading-8">
+							font-JetBrains text-stone-100 leading-8">
 				<div>
 					<p>I&apos;m Célestin, <br/>
 					a <a

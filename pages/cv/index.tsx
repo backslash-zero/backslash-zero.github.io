@@ -273,7 +273,7 @@ const cv = (props : cvProps) => {
 
 		<div className="w-full h-full absolute overflow-scroll
 						p-8
-						font-mono text-stone-800">
+						font-JetBrains text-stone-800">
 			<div className="max-w-7xl
 							md:p-8 md:outline md:outline-1 md:outline-stone-800 md:m-auto
 							grid md:grid-cols-[1fr_200px]
