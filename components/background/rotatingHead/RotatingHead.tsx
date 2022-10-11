@@ -1,4 +1,6 @@
 import { Canvas, useFrame } from "@react-three/fiber";
+import { Suspense } from "react";
+import Loader from "./Loader";
 import ModelSimple from "./ModelSimple";
 
 interface RotatingHeadProps {
@@ -9,6 +11,7 @@ const RotatingHead = ({ material } : RotatingHeadProps) => {
 	return ( 
 		<div className='absolute w-full h-full '>
 			<Canvas>
+				<Suspense fallback={<Loader/>}>
 					<ModelSimple material={material}></ModelSimple>
 					{/* <Model
 						material={material}
@@ -28,6 +31,7 @@ const RotatingHead = ({ material } : RotatingHeadProps) => {
 						</>
 					}
 					{/* <OrbitControls /> */}
+				</Suspense>
 			</Canvas>
 		</div>
 	 );
