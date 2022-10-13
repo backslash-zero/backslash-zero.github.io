@@ -2,6 +2,7 @@
 import { NextPage } from "next";
 import Info from "../../components/cv/cards/Info";
 import Skill from "../../components/cv/cards/Skill";
+import CardLayout from "../../components/layouts/CardLayout";
 import SeparatorCV from "../../components/tools/SeparatorCV";
 import { 
 	getInfos,
@@ -105,10 +106,7 @@ const cv = (props : cvProps) => {
 	const Studies = props.studies.map(
 		(infoLine, idx) => {
 			return (
-				<div key={infoLine.id} className="	p-2
-											outline outline-1 outline-stone-800 
-											flex flex-col gap-2
-											">
+				<CardLayout key={infoLine.id} >
 					<div className=" flex justify-between
 									text-xs">
 						<p>
@@ -136,17 +134,14 @@ const cv = (props : cvProps) => {
 							{  infoLine['Tagline'].rich_text[0].plain_text }
 						</p>
 					</div>
-				</div>
+				</CardLayout>
 			)
 		}
 	)
 	const Pro = props.pro.map(
 		(infoLine, idx) => {
 			return (
-				<div key={infoLine.id} className="	p-2
-											outline outline-1 outline-stone-800 
-											flex flex-col gap-2
-											">
+				<CardLayout key={infoLine.id}>
 					<div className=" flex justify-between
 									text-xs">
 						<p>
@@ -172,17 +167,14 @@ const cv = (props : cvProps) => {
 							{  infoLine.Tagline.rich_text[0].plain_text }
 						</p>
 					</div>
-				</div>
+				</CardLayout>
 			)
 		}
 	)
 	const CodeProjects = props.codeprojects.map(
 		(infoLine, idx) => {
 			return (
-				<div key={infoLine.id} className="	p-2
-											outline outline-1 outline-stone-800 
-											flex flex-col gap-2
-											">
+				<CardLayout key={infoLine.id} >
 					<div className=" flex gap-2 flex-wrap
 									text-xs">
 						{ 
@@ -209,22 +201,25 @@ const cv = (props : cvProps) => {
 							{  infoLine.Tagline.rich_text[0].plain_text }
 						</p>
 					</div>
-					<div className="text-sm underline underline-offset-4 
-									flex gap-2">
-						{
-							infoLine.repo.url && 
-							<a href={infoLine.repo.url}>
-								repo
-							</a>
-						}
-						{
-							infoLine.Deployed.url && 
-							<a href={infoLine.Deployed.url}>
-								page
-							</a>
-						}
-					</div>
-				</div>
+					{
+						(infoLine.repo.url || infoLine.Deployed.url) && 
+						<div className="text-sm underline underline-offset-4 
+										flex gap-2">
+							{
+								infoLine.repo.url && 
+								<a href={infoLine.repo.url}>
+									repo
+								</a>
+							}
+							{
+								infoLine.Deployed.url && 
+								<a href={infoLine.Deployed.url}>
+									page
+								</a>
+							}
+						</div>
+					}
+				</CardLayout>
 			)
 		}
 	)
@@ -232,10 +227,7 @@ const cv = (props : cvProps) => {
 		(infoLine, idx) => {
 			return (
 
-				<div key={infoLine.id} className="	relative p-2
-											outline outline-1 outline-stone-800 
-											flex flex-col gap-2
-											">
+				<CardLayout key={infoLine.id}>
 					<div className="flex justify-between">
 						<p className="">
 							{ infoLine.Name.title[0].plain_text } 
@@ -249,16 +241,16 @@ const cv = (props : cvProps) => {
 							{  infoLine.Text.rich_text[0].plain_text }
 						</p>
 					</div>
-					<div className="text-sm underline underline-offset-4 
-									flex gap-2">
 						{
 							infoLine.Link.url && 
-							<a href={infoLine.Link.url}>
-								{infoLine.Link.url}
-							</a>
+							<div className="text-sm underline underline-offset-4 
+							flex gap-2">
+								<a href={infoLine.Link.url}>
+									{infoLine.Link.url}
+								</a>
+							</div>
 						}
-					</div>
-				</div>
+				</CardLayout>
 			)
 		}
 	)
@@ -267,21 +259,21 @@ const cv = (props : cvProps) => {
 	return ( 
 
 		<div className="w-full
-						absolute bottom-0
+						absolute bottom-0 print:block
 						h-full
 						md:p-8
-						overflow-scroll
+						overflow-scroll print:overflow-visible
 						font-JetBrains text-stone-800">
 			<div className="max-w-7xl
-							p-8 md:outline md:outline-1 md:outline-stone-800 md:m-auto
-							grid md:grid-cols-[1fr_200px]
+							p-8 md:outline md:outline-1 md:outline-stone-800 md:m-auto print:outline print:outline-1 print:outline-stone-800 print:m-auto 
+							grid md:grid-cols-[1fr_216px] print:grid-cols-[1fr_216px] 
 							gap-4">
 				<div>
 					<p className="">Célestin Meunier</p>
 					{ infos }
 				</div>
 				<div className="
-					flex flex-col
+					flex flex-col 
 					col-span-1
 					row-span-2
 				">
@@ -315,28 +307,28 @@ const cv = (props : cvProps) => {
 					<div className="flex flex-col">
 						<h2 className="text font"> Studies </h2>
 						{/* <SeparatorCV/> */}
-						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+						<div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-4 w-full">
 							{ Studies }
 						</div>
 					</div>
 					<div className="flex flex-col">
 						<h2 className="text font"> Professional Experiences </h2>
 						{/* <SeparatorCV/> */}
-						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+						<div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-4 w-full">
 							{ Pro }
 						</div>
 					</div>
 					<div className="flex flex-col">
 						<h2 className="text font"> Code Projects </h2>
 						{/* <SeparatorCV/> */}
-						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+						<div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-4 w-full">
 							{ CodeProjects }
 						</div>
 					</div>
 					<div className="flex flex-col">
 						<h2 className="text font"> Outside of work </h2>
 						{/* <SeparatorCV/> */}
-						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+						<div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-4 w-full">
 							{ Outside }
 						</div>
 					</div>

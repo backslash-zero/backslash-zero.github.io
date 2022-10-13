@@ -301,6 +301,7 @@ const getCodeProjects = async() =>  {
 }
 
 export {
+	// CV
 	getInfos,
 	getSkillsLanguages, 
 	getSkillsProg, 
@@ -311,6 +312,8 @@ export {
 	getPro,
 	getOutside,
 	getCodeProjects,
+
+	// Portofolio
 }
 
 

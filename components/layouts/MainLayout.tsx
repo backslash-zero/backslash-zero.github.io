@@ -9,7 +9,7 @@ const SmokeBackgroundNoSSR = dynamic (
 const MainLayout = ({ children } : any ) => {
 	return (  
 		<div className="w-full h-full">
-			<div className="absolute w-full h-full bg-stone-200">
+			<div className="absolute w-full h-full bg-stone-200 print:hidden">
 				<SmokeBackgroundNoSSR/>
 			</div>
 			<main className="absolute w-full h-full ">

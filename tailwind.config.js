@@ -15,7 +15,11 @@ module.exports = {
         mono: ['JetBrains', 'mono','monospace', ...defaultTheme.fontFamily.mono],
 				serif: ['Crimson', 'serif', , ...defaultTheme.fontFamily.serif],
 				sans: ['sans', ...defaultTheme.fontFamily.serif]
-      }
+      },
+      screens: {
+        print: {raw: 'print'},
+        screen: {raw: 'screen'},
+      },
     },
   },
   variants: {
