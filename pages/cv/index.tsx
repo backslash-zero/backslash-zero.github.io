@@ -35,10 +35,12 @@ interface cvProps {
 const cv = (props : cvProps) => {
 
 	const infos = props.infos.map(
-		(infoLine, idx) => {
+		(infoLine) => {
 			return (
 				infoLine.checkbox.checkbox &&
-				<Info key={infoLine.id} url={infoLine.link.url} content={infoLine.value.rich_text[0].plain_text}/>
+				<Info key={infoLine.id} 
+						url={infoLine.link.url} 
+						content={infoLine.value.rich_text[0].plain_text}/>
 			)
 		}
 	)
@@ -104,7 +106,7 @@ const cv = (props : cvProps) => {
 	)
 	
 	const Studies = props.studies.map(
-		(infoLine, idx) => {
+		(infoLine) => {
 			return (
 				<CardLayout key={infoLine.id} >
 					<div className=" flex justify-between
@@ -139,7 +141,7 @@ const cv = (props : cvProps) => {
 		}
 	)
 	const Pro = props.pro.map(
-		(infoLine, idx) => {
+		(infoLine) => {
 			return (
 				<CardLayout key={infoLine.id}>
 					<div className=" flex justify-between
@@ -172,7 +174,7 @@ const cv = (props : cvProps) => {
 		}
 	)
 	const CodeProjects = props.codeprojects.map(
-		(infoLine, idx) => {
+		(infoLine) => {
 			return (
 				<CardLayout key={infoLine.id} >
 					<div className=" flex gap-2 flex-wrap
@@ -224,7 +226,7 @@ const cv = (props : cvProps) => {
 		}
 	)
 	const Outside = props.outside.map(
-		(infoLine, idx) => {
+		(infoLine) => {
 			return (
 
 				<CardLayout key={infoLine.id}>
@@ -268,9 +270,11 @@ const cv = (props : cvProps) => {
 							p-8 md:outline md:outline-1 md:outline-stone-800 md:m-auto print:outline print:outline-1 print:outline-stone-800 print:m-auto 
 							grid md:grid-cols-[1fr_216px] print:grid-cols-[1fr_216px] 
 							gap-4">
-				<div>
-					<p className="">Célestin Meunier</p>
-					{ infos }
+				<div className="flex">
+					<div className="flex flex-col gap-2">
+						<p className="">Célestin Meunier</p>
+						{ infos }
+					</div>
 				</div>
 				<div className="
 					flex flex-col 
