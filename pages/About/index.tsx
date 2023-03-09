@@ -1,49 +1,89 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import NavBar from "../../components/navbar/NavBar";
-import UnderConstruction from "../../components/tools/UnderConstruction";
 import RotatingHead from "../../components/background/rotatingHead/RotatingHead";
 import Link from "next/link";
+import MainLayout from "../../components/layouts/MainLayout";
+import ContentWrapper from "../../components/layouts/ContentWrapper";
+import BigLink from "../../components/links/bigLink";
 
-const RotatingHeadNoSSR = dynamic (
-	() => import('../../components/background/rotatingHead/RotatingHead'),
-	{ 
-		ssr: false 
-	}
-)
+const RotatingHeadNoSSR = dynamic(
+  () => import("../../components/background/rotatingHead/RotatingHead"),
+  {
+    ssr: false,
+  }
+);
+
+const SmokeBackgroundNoSSR = dynamic(
+  () => import("../../components/background/CanvasSmoke"),
+  { ssr: false }
+);
 
 const About = () => {
-	const [material, setMaterial] = useState("default");
-	return (  
-		<div className="w-full h-full">
-			<NavBar back="/"/>
-			<RotatingHead
-				material={material}
-			/>
-			<div className="absolute w-full h-full 
-							flex flex-col items-center justify-center
-							p-4
-							font-JetBrains text-stone-100 leading-8">
-				<div>
-					<p>I&apos;m Célestin, <br/>
-					a <a
-						className="font-extrabold"
-						onMouseEnter={() => {setMaterial("lyon")}}
-						onMouseLeave={() => {setMaterial("default")}}
-						>Lyon</a>–born, <a
-						className="font-extrabold"
-						onMouseEnter={() => {setMaterial("berlin")}}
-						onMouseLeave={() => {setMaterial("default")}}
-						>Berlin</a>–based, Designer, Developer and Media Artist. <br/> 
-					I just finished the <i>common-core</i> of <a className="font-bold underline underline-offset-4" href="https://42.fr">42 School</a> and I like to work with code, 3D, video, and photography.<br/>
-					Contact: hello (at) celest.in</p>
-					<p><a className="font-bold underline underline-offset-4 hover:blur-sm" href="https://www.instagram.com/cele_stin">insta</a> <a className="font-bold underline underline-offset-4 hover:blur-sm" href="https://www.github.com/backslash-zero">github</a> <Link href="/cv"><a className="font-bold underline underline-offset-4 hover:blur-sm">cv</a></Link></p>
-				</div>
-				<div>
-				</div>
-			</div>
-		</div>
-	);
-}
+  const [material, setMaterial] = useState("default");
+  return (
+    <div className="w-full h-full ">
+      <div className="absolute -z-10 w-full h-full">
+        <SmokeBackgroundNoSSR />
+        <RotatingHead material={material} />
+      </div>
+      <ContentWrapper>
+        <div
+          className="w-full h-full
+							flex flex-col gap-8
+              font-sans text-4xl text-stone-100 leading-relaxed"
+        >
+          <div className="flex flex-col gap-8">
+            <p>
+              I&apos;m Célestin, <br />a{" "}
+              <a
+                className="font-serif italic"
+                onMouseEnter={() => {
+                  setMaterial("lyon");
+                }}
+                onMouseLeave={() => {
+                  setMaterial("default");
+                }}
+              >
+                Lyon
+              </a>
+              –born,{" "}
+              <a
+                className="font-serif italic"
+                onMouseEnter={() => {
+                  setMaterial("berlin");
+                }}
+                onMouseLeave={() => {
+                  setMaterial("default");
+                }}
+              >
+                Berlin
+              </a>
+              –based, Designer, Developer and Media Artist. I am also a{" "}
+              <a
+                className="italic underline underline-offset-8"
+                href="https://42.fr"
+              >
+                42
+              </a>{" "}
+              alumni and I like to work with code, 3D, video, and photography.
+            </p>
+            <BigLink url="mailto:hello@celest.in" content="hello@celest.in" />
+            <div className="flex gap-6">
+              <BigLink
+                url="https://www.instagram.com/cele_stin"
+                content="insta"
+              />
+              <BigLink
+                url="https://www.github.com/backslash-zero"
+                content="github"
+              />
+              <BigLink url="/cv" content="cv" routerLink={true} />
+            </div>
+          </div>
+        </div>
+      </ContentWrapper>
+    </div>
+  );
+};
 
 export default About;

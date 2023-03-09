@@ -1,23 +1,22 @@
 import Link from "next/link";
+import Navlink from "./NavLink";
 
-interface NavBarProps {
-	back : string
-}
+interface NavBarProps {}
 
-const NavBar = ({ back } : NavBarProps) => {
-	return ( 
-		<div className="absolute top-0 w-full h-16 
-						border-stone-200 border-b-1
-						flex items-center p-
-						font-JetBrains text-stone-800
-						z-10">
-			<div className="p-4 hover:text-stone-900 hover:blur-sm">
-				<Link href={back}>
-					<a>&#60;- back</a>
-				</Link>
-			</div>
-		</div>
-	 );
-}
+export const NavBar = () => {
+  return (
+    <div
+      className="absolute top-0 w-full h-16 pl-4 pr-4
+						flex items-center justify-end gap-4
+						z-10
+            print:hidden"
+    >
+      <Navlink to="/" value="Home" />
+      <Navlink to="/About" value="About" />
+      <Navlink to="/Work" value="Work" />
+      <Navlink to="/Contact" value="Contact" />
+    </div>
+  );
+};
 
 export default NavBar;

@@ -219,7 +219,7 @@ const cv = (props: cvProps) => {
 						h-full
 						md:p-8 print p-0
 						overflow-scroll print:overflow-visible
-						font-JetBrains text-stone-800"
+						font-mono text-stone-800"
     >
       <div
         className="max-w-7xl

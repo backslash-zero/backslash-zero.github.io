@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-const defaultTheme = require('tailwindcss/defaultTheme')
-
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -9,12 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily : {
-        Crimson : ['Crimson Text'],
-        JetBrains : ['JetBrains Mono'],
-        mono: ['JetBrains', 'mono','monospace', ...defaultTheme.fontFamily.mono],
-				serif: ['Crimson', 'serif', , ...defaultTheme.fontFamily.serif],
-				sans: ['sans', ...defaultTheme.fontFamily.serif]
+      fontFamily: {
+        mono: ['var(--ibmPlexMono-font)', 'mono','monospace'],
+				serif: ['var(--avara-font)','serif'],
+				sans: ['var(--suisseIntl-font)', 'sans']
       },
       screens: {
         print: {raw: 'print'},
@@ -28,7 +24,5 @@ module.exports = {
     },
   },
   plugins: [],
-  corePlugins: {
-    fontFamily: true,
-  },
+
 }

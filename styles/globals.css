@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('http://fonts.cdnfonts.com/css/jetbrains-mono');
-@import url('http://fonts.cdnfonts.com/css/crimson-text');
-
 html,
 body {
   padding: 0;
