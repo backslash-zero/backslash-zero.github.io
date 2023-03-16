@@ -16,6 +16,11 @@ module.exports = {
         print: {raw: 'print'},
         screen: {raw: 'screen'},
       },
+      height: {
+        'screen-100dvh' : '100dvh',
+        'screen-100svh' : '100svh',
+        'screen-100lvh' : '100lvh',
+      }
     },
   },
   variants: {

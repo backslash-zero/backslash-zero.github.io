@@ -134,7 +134,7 @@ const cv = (props: cvProps) => {
             <p className="">{infoLine.Institution.rich_text[0].plain_text}</p>
           )}
         </div>
-        <p className="text-xs font-mono">
+        <p className="font-mono text-xs">
           {infoLine.Location.rich_text[0].plain_text}
         </p>
         <div className="text-sm">
@@ -170,7 +170,7 @@ const cv = (props: cvProps) => {
   const CodeProjects = props.codeprojects.map((infoLine, id) => {
     return (
       <CardLayout first={id === 0} key={id}>
-        <div className="flex flex-col md:flex-row justify-between md:items-center gap-4">
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
           <div className="flex items-center gap-2">
             <p className="text-base">{infoLine.Name.title[0].plain_text}</p>
             {infoLine.repo.url && (
@@ -185,13 +185,13 @@ const cv = (props: cvProps) => {
             )}
           </div>
           <div
-            className=" flex gap-2 flex-wrap opacity-80
-									text-xs"
+            className=" flex flex-wrap gap-2 text-xs
+									opacity-80"
           >
             {infoLine.Technologies.multi_select.map((technology: any) => {
               return (
                 <div
-                  className={` p-1 pr-2 pl-2 bg-${technology.color} outline-1 outline rounded-md`}
+                  className={` p-1 pr-2 pl-2 bg-${technology.color} rounded-md outline outline-1`}
                   key={technology.id}
                 >
                   {technology.name}
@@ -218,8 +218,8 @@ const cv = (props: cvProps) => {
         </div>
         {infoLine.Link.url && (
           <div
-            className="text-sm underline underline-offset-4 
-							flex gap-2"
+            className="flex gap-2 text-sm 
+							underline underline-offset-4"
           >
             <a href={infoLine.Link.url}>{infoLine.Link.url}</a>
           </div>
@@ -230,31 +230,30 @@ const cv = (props: cvProps) => {
 
   return (
     <div
-      className="w-full
-						absolute bottom-0 print:block
-						h-full
-						md:p-8 print p-0
-						overflow-scroll print:overflow-visible
-						font-sans text-stone-800"
+      className="
+						w-full
+						overflow-scroll p-0 font-sans
+						text-stone-800 md:p-8
+						print:block print:overflow-visible"
     >
       <div
-        className="max-w-7xl
-							p-8 md:outline md:outline-1 md:outline-stone-800 md:m-auto print:outline-none print:m-0 
-							grid md:grid-cols-[1fr_216px] print:grid-cols-[1fr_216px]
-							gap-x-20 gap-y-4"
+        className="grid
+							max-w-7xl gap-x-20 gap-y-4 md:m-auto md:grid-cols-[1fr_216px] md:p-8 md:outline 
+							md:outline-1 md:outline-stone-800 print:m-0
+							print:grid-cols-[1fr_216px] print:outline-none"
       >
         <div className="flex">
           <div className="flex flex-col gap-4">{header}</div>
         </div>
         <div
           className="
-					flex flex-col gap-8
-					col-span-1
-					row-span-2
+					col-span-1 row-span-2 flex
+					flex-col
+					gap-8
           text-sm
 				"
         >
-          <div className="w-full font-mono flex flex-col gap-2">{infos}</div>
+          <div className="flex w-full flex-col gap-2 font-mono">{infos}</div>
           <div className="w-full">
             <h3 className="font-light ">📁 Languages</h3>
             {skillsLanguages}
