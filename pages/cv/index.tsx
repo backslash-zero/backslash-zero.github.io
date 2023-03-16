@@ -59,7 +59,7 @@ const cv = (props: cvProps) => {
   const skillsLanguages = props.skillsLanguages.map((infoLine, idx) => {
     return (
       <Skill
-        key={infoLine.id}
+        key={idx}
         last={idx === props.skillsLanguages.length - 1}
         content={
           infoLine.Name.title[0].plain_text +
@@ -73,7 +73,7 @@ const cv = (props: cvProps) => {
   const skillsProg = props.skillsProg.map((infoLine, idx) => {
     return (
       <Skill
-        key={infoLine.id}
+        key={idx}
         last={idx === props.skillsProg.length - 1}
         content={infoLine.Name.title[0].plain_text}
       />
@@ -83,7 +83,7 @@ const cv = (props: cvProps) => {
   const skillsTechs = props.skillsTechs.map((infoLine, idx) => {
     return (
       <Skill
-        key={infoLine.id}
+        key={idx}
         last={idx === props.skillsTechs.length - 1}
         content={infoLine.Name.title[0].plain_text}
       />
@@ -93,7 +93,7 @@ const cv = (props: cvProps) => {
   const skillsSoft = props.skillsSoft.map((infoLine, idx) => {
     return (
       <Skill
-        key={infoLine.id}
+        key={idx}
         last={idx === props.skillsSoft.length - 1}
         content={infoLine.Name.title[0].plain_text}
       />
@@ -103,7 +103,7 @@ const cv = (props: cvProps) => {
   const skillsOther = props.skillsOther.map((infoLine, idx) => {
     return (
       <Skill
-        key={infoLine.id}
+        key={idx}
         last={idx === props.skillsOther.length - 1}
         content={infoLine.Name.title[0].plain_text}
       />
