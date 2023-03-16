@@ -112,7 +112,7 @@ const cv = (props: cvProps) => {
 
   const Studies = props.studies.map((infoLine, id) => {
     return (
-      <CardGridLayout first={id === 0} key={infoLine.id}>
+      <CardGridLayout first={id === 0} key={id}>
         <div
           className=" flex justify-between
 									text-sm"
