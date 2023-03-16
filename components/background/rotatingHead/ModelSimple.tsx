@@ -8,6 +8,8 @@ import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useFrame } from "@react-three/fiber";
 
+const modelScale = 1.3;
+
 type GLTFResult = GLTF & {
   nodes: {
     celehead: THREE.Mesh;
@@ -62,7 +64,7 @@ export function ModelSimple({ props, material }: ModelSimpleProps) {
         ref={myMesh}
         geometry={nodes.celehead.geometry}
         material={assignMaterial(material)}
-        scale={[1.3, 1.3, 1.3]}
+        scale={[modelScale, modelScale, modelScale]}
       />
     </group>
   );
