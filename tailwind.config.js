@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mono: ['var(--spaceMono-font)', 'mono','monospace'],
+        mono: ['var(--ibmPlexMono-font)', 'mono','monospace'],
 				serif: ['var(--avara-font)','serif'],
 				sans: ['var(--suisseIntl-font)', 'sans']
       },

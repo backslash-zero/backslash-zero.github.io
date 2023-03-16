@@ -21,7 +21,11 @@ const Home: NextPage = () => {
   return (
     <div className="relative h-full w-full">
       <div className="absolute flex h-full w-full items-center justify-center">
-        <div className={`bg-blue- h-80 w-80 ${!isVisible && "hidden"}`}>
+        <div
+          className={`bg-blue- h-80 w-80 ${
+            !isVisible && "opacity-0"
+          } transition-opacity duration-500`}
+        >
           <RotatingHeadNoSSR material={material} />
         </div>
       </div>
@@ -29,8 +33,9 @@ const Home: NextPage = () => {
         <p>
           I&apos;m{" "}
           <a
-            className="font-serif italic"
+            className="cursor-help font-serif italic"
             onMouseEnter={() => {
+              setMaterial("default");
               setIsVisible(true);
             }}
             onMouseLeave={() => {
@@ -41,13 +46,12 @@ const Home: NextPage = () => {
           </a>
           ,<br />a{" "}
           <a
-            className="font-serif italic"
+            className="cursor-help font-serif italic"
             onMouseEnter={() => {
               setMaterial("lyon");
               setIsVisible(true);
             }}
             onMouseLeave={() => {
-              setMaterial("default");
               setIsVisible(false);
             }}
           >
@@ -55,13 +59,12 @@ const Home: NextPage = () => {
           </a>
           –born,{" "}
           <a
-            className="font-serif italic"
+            className="cursor-help font-serif italic"
             onMouseEnter={() => {
               setMaterial("berlin");
               setIsVisible(true);
             }}
             onMouseLeave={() => {
-              setMaterial("default");
               setIsVisible(false);
             }}
           >
