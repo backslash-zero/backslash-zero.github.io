@@ -5,10 +5,9 @@ function ContentWrapper({ children }: ContentWrapperProps) {
       className="w-full h-full  
 		  pt-16
 		  overflow-auto
-			md:flex md:items-center md:justify-center 
-			p-6 md:p-8"
+			p-6"
     >
-      <div className="w-full md:max-w-screen-md">{children}</div>
+      <div className="w-full">{children}</div>
     </div>
   );
 }

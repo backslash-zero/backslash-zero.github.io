@@ -10,7 +10,7 @@ function BigLink({ url, content, routerLink = false }: BigLinkProps) {
   if (routerLink)
     return (
       <Link
-        className="font-mono font-light italic underline underline-offset-8"
+        className="font-sans font-light  underline underline-offset-8"
         href={url}
       >
         {content}
@@ -19,7 +19,7 @@ function BigLink({ url, content, routerLink = false }: BigLinkProps) {
 
   return (
     <a
-      className="font-mono font-light italic underline underline-offset-8"
+      className="font-sans font-light  underline underline-offset-8"
       href={url}
     >
       {content}

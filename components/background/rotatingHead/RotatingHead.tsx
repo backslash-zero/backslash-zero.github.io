@@ -2,6 +2,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense } from "react";
 import Loader from "./Loader";
 import ModelSimple from "./ModelSimple";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 
 interface RotatingHeadProps {
   material: string;
@@ -9,7 +10,7 @@ interface RotatingHeadProps {
 
 const RotatingHead = ({ material }: RotatingHeadProps) => {
   return (
-    <div className="absolute w-full h-full ">
+    <div className="w-full h-full ">
       <Canvas>
         <Suspense fallback={<Loader />}>
           <ModelSimple material={material}></ModelSimple>
@@ -53,7 +54,9 @@ const RotatingHead = ({ material }: RotatingHeadProps) => {
               />
             </>
           )}
-          {/* <OrbitControls /> */}
+          {/* control field of view */}
+          <OrbitControls />
+          <PerspectiveCamera makeDefault position={[0, 0, 5]} fov={50} />
         </Suspense>
       </Canvas>
     </div>

@@ -10,67 +10,64 @@ import { useFrame } from "@react-three/fiber";
 
 type GLTFResult = GLTF & {
   nodes: {
-	celehead: THREE.Mesh;
+    celehead: THREE.Mesh;
   };
   materials: {
-	defaultMaterial: THREE.MeshStandardMaterial;
+    defaultMaterial: THREE.MeshStandardMaterial;
   };
 };
 
 interface ModelSimpleProps {
-	props?: JSX.IntrinsicElements['group'],
-	material : string,
+  props?: JSX.IntrinsicElements["group"];
+  material: string;
 }
 
 export function ModelSimple({ props, material }: ModelSimpleProps) {
   const { nodes, materials } = useGLTF("celestin.gltf") as any;
-  const lyonMaterial = new THREE.MeshStandardMaterial(
-		{ 
-			color : "red",
-			wireframe: true
-		}
-	)
-	const berlinMaterial = new THREE.MeshStandardMaterial(
-		
-		{ 
-			color : "black",
-			roughness : 0,
-			metalness : 1
-		}
-	)
-	// Rotatition animation
-	let myMesh = React.useRef<any>();
-	useFrame(({ clock }) => {
-	const a = clock.getElapsedTime();
-	if (myMesh.current)
-		myMesh.current.rotation.y = a;
-	});
+  const lyonMaterial = new THREE.MeshStandardMaterial({
+    color: "red",
+    wireframe: true,
+  });
+  const berlinMaterial = new THREE.MeshStandardMaterial({
+    color: "black",
+    roughness: 0,
+    metalness: 1,
+  });
+  // Rotatition animation
+  let myMesh = React.useRef<any>();
+  useFrame(({ clock }) => {
+    const a = clock.getElapsedTime();
+    if (myMesh.current) myMesh.current.rotation.y = a;
+  });
 
-	const assignMaterial = (materialString : string) : THREE.MeshStandardMaterial =>  {
-		switch (materialString) {
-			case "lyon" : {
-				return (lyonMaterial);
-			}
-			case "berlin" : {
-				return (berlinMaterial);
-			}
-			default : {
-				return (materials.defaultMaterial);
-			}
-		}
-	}
+  const assignMaterial = (
+    materialString: string
+  ): THREE.MeshStandardMaterial => {
+    switch (materialString) {
+      case "lyon": {
+        return lyonMaterial;
+      }
+      case "berlin": {
+        return berlinMaterial;
+      }
+      default: {
+        return materials.defaultMaterial;
+      }
+    }
+  };
 
-	return (
-	<group {...props} dispose={null}>
-	  <mesh
-		ref= {myMesh}
-		geometry={nodes.celehead.geometry}
-		material={assignMaterial(material)}
-	  />
-	</group>
+  return (
+    <group {...props} dispose={null}>
+      <mesh
+        ref={myMesh}
+        geometry={nodes.celehead.geometry}
+        material={assignMaterial(material)}
+        scale={[1.3, 1.3, 1.3]}
+      />
+    </group>
   );
 }
 
 useGLTF.preload("celestin.gltf");
 
-export default ModelSimple
+export default ModelSimple;

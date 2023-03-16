@@ -4,14 +4,15 @@ interface CardLayoutProps extends React.PropsWithChildren {
   first: boolean;
 }
 
-const CardLayout = ({ first, children }: any) => {
+const CardGridLayout = ({ first, children }: any) => {
   return (
     <div
       className={`pt-4 pb-4
 								${!first ? "border-t" : "border-none"} 
 								border-stone-800/20 border-t
-                text-sm
+                text-xs
 								flex flex-col gap-2
+                md:grid grid-cols-[120px_1fr] mdLgap-1
 								`}
     >
       {children}
@@ -19,4 +20,4 @@ const CardLayout = ({ first, children }: any) => {
   );
 };
 
-export default CardLayout;
+export default CardGridLayout;
