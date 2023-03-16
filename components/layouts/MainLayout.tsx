@@ -10,7 +10,7 @@ const MainLayout = ({ children }: any) => {
 
   return (
     <div className="flex h-screen-100dvh w-full flex-col bg-stone-50">
-      <nav className="h-20 w-full bg-stone-200"></nav>
+      {/* <nav className="h-20 w-full bg-stone-200"></nav> */}
       <main className="w-full flex-grow overflow-auto p-4 pl-6 pr-6 md:p-8 md:pl-10 md:pr-10 ">
         {children}
       </main>

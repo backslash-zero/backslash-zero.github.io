@@ -22,7 +22,7 @@ const Home: NextPage = () => {
     <div className="relative h-full w-full">
       <div className="absolute flex h-full w-full items-center justify-center">
         <div
-          className={`bg-blue- h-80 w-80 ${
+          className={`aspect-square w-full max-w-lg ${
             !isVisible && "opacity-0"
           } transition-opacity duration-500`}
         >
