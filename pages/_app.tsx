@@ -55,91 +55,30 @@ const Avara = localFont({
   ],
 });
 
-// const suisseIntl = localFont({
-//   src: [
-//     // Suisse Intl with all weights and styles
-//     {
-//       path: "fonts/Suisse/SuisseIntl-UltraLight-WebS.woff2",
-//       weight: "100",
-//       style: "normal",
-//     },
-//     {
-//       path: "fonts/Suisse/SuisseIntl-UltraLightItalic-WebS.woff2",
-//       weight: "100",
-//       style: "italic",
-//     },
-//     {
-//       path: "fonts/Suisse/SuisseIntl-Light-WebS.woff2",
-//       weight: "200",
-//       style: "normal",
-//     },
-//     {
-//       path: "fonts/Suisse/SuisseIntl-LightItalic-WebS.woff2",
-//       weight: "200",
-//       style: "italic",
-//     },
-//     {
-//       path: "fonts/Suisse/SuisseIntl-Book-WebS.woff2",
-//       weight: "300",
-//       style: "normal",
-//     },
-//     {
-//       path: "fonts/Suisse/SuisseIntl-BookItalic-WebS.woff2",
-//       weight: "300",
-//       style: "italic",
-//     },
-//     {
-//       path: "fonts/Suisse/SuisseIntl-Regular-WebS.woff2",
-//       weight: "400",
-//       style: "normal",
-//     },
-//     {
-//       path: "fonts/Suisse/SuisseIntl-RegularItalic-WebS.woff2",
-//       weight: "400",
-//       style: "italic",
-//     },
-//     {
-//       path: "fonts/Suisse/SuisseIntl-Medium-WebS.woff2",
-//       weight: "500",
-//       style: "normal",
-//     },
-//     {
-//       path: "fonts/Suisse/SuisseIntl-MediumItalic-WebS.woff2",
-//       weight: "500",
-//       style: "italic",
-//     },
-//     {
-//       path: "fonts/Suisse/SuisseIntl-SemiBold-WebS.woff2",
-//       weight: "600",
-//       style: "normal",
-//     },
-//     {
-//       path: "fonts/Suisse/SuisseIntl-SemiBoldItalic-WebS.woff2",
-//       weight: "600",
-//       style: "italic",
-//     },
-//     {
-//       path: "fonts/Suisse/SuisseIntl-Bold-WebS.woff2",
-//       weight: "700",
-//       style: "normal",
-//     },
-//     {
-//       path: "fonts/Suisse/SuisseIntl-BoldItalic-WebS.woff2",
-//       weight: "700",
-//       style: "italic",
-//     },
-//     {
-//       path: "fonts/Suisse/SuisseIntl-Black-WebS.woff2",
-//       weight: "900",
-//       style: "normal",
-//     },
-//     {
-//       path: "fonts/Suisse/SuisseIntl-BlackItalic-WebS.woff2",
-//       weight: "900",
-//       style: "italic",
-//     },
-//   ],
-// });
+const suisseIntl = localFont({
+  src: [
+    {
+      path: "fonts/Suisse/Suisse-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "fonts/Suisse/Suisse-LightItalic.woff2",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "fonts/Suisse/Suisse-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "fonts/Suisse/Suisse-RegularItalic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+  ],
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -148,6 +87,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <style jsx global>
         {`
           :root {
+            --suisseIntl-font: ${suisseIntl.style.fontFamily};
             --ibmPlexMono-font: ${ibmPlexMono.style.fontFamily};
             --ibmPlexSans-font: ${ibmPlexSans.style.fontFamily};
             --spaceMono-font: ${spaceMono.style.fontFamily};

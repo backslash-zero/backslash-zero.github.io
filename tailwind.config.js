@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mono: ['var(--ibmPlexMono-font)', 'mono','monospace'],
+        mono: ['var(--spaceMono-font)', 'mono','monospace'],
 				serif: ['var(--avara-font)','serif'],
-				sans: ['var(--ibmPlexSans-font)', 'sans']
+				sans: ['var(--suisseIntl-font)', 'sans']
       },
       screens: {
         print: {raw: 'print'},

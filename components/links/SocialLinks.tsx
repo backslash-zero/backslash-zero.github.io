@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function SocialLinks() {
   return (
-    <ul className="font-mono underline underline-offset-4 print:hidden">
+    <ul className="flex flex-col items-end gap-2 font-mono text-sm underline underline-offset-4 print:hidden">
       <li className="hover:blur-sm">
         <Link href="mailto:hello@celest.in">hello@celest.in</Link>
       </li>
