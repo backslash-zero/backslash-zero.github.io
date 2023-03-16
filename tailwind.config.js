@@ -10,7 +10,7 @@ module.exports = {
       fontFamily: {
         mono: ['var(--ibmPlexMono-font)', 'mono','monospace'],
 				serif: ['var(--avara-font)','serif'],
-				sans: ['var(--suisseIntl-font)', 'sans']
+				sans: ['var(--ibmPlexSans-font)', 'sans']
       },
       screens: {
         print: {raw: 'print'},
