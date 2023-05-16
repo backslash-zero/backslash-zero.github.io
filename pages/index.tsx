@@ -79,7 +79,14 @@ const Home: NextPage = () => {
           For more info, feel free to check my{" "}
           <Link className="underline underline-offset-8" href="/cv">
             CV
-          </Link>{" "}
+          </Link>
+          , my{" "}
+          <a
+            className="underline underline-offset-8"
+            href="https://drive.google.com/file/d/16lagiUJFyHKb_jqgqRL9rLaSilPmJSMc/view?usp=share_link"
+          >
+            portfolio
+          </a>{" "}
           or contact me.
         </p>
       </div>
