@@ -70,11 +70,19 @@ const Home: NextPage = () => {
           >
             Berlin
           </a>
-          –based, Designer, Developer and Media Artist. I am also a{" "}
+          –based, Designer, Developer and Media Artist. I am currently enrolled
+          at{" "}
+          <a
+            className="underline underline-offset-8"
+            href="https://www.newpractice.net/study"
+          >
+            Design & Computation
+          </a>
+          {". "}I am also a{" "}
           <a className="underline underline-offset-8" href="https://42.fr">
             42
           </a>{" "}
-          alumni and I like to work with code, 3D, video, and photography.{" "}
+          alumni, and I like to work with code, 3D, video, and photography.{" "}
           <br />
           For more info, feel free to check my{" "}
           <Link className="underline underline-offset-8" href="/cv">

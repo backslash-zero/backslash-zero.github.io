@@ -1,8 +1,6 @@
-import { NextPage } from "next";
 import Info from "../../components/cv/cards/Info";
 import Skill from "../../components/cv/cards/Skill";
 import CardLayout from "../../components/layouts/CardLayout";
-import SeparatorCV from "../../components/tools/SeparatorCV";
 import { FiGithub, FiLink2 } from "react-icons/fi";
 import {
   getHeader,
@@ -17,7 +15,9 @@ import {
   getOutside,
   getCodeProjects,
 } from "../../lib/NotionCV";
+
 import CardGridLayout from "../../components/layouts/CardGridLayout";
+
 // import { Databases } from "../../lib/NotionCV";
 
 interface cvProps {
@@ -175,7 +175,9 @@ const cv = (props: cvProps) => {
             <p className="text-base">{infoLine.Name.title[0].plain_text}</p>
             {infoLine.repo.url && (
               <a href={infoLine.repo.url}>
-                <FiGithub />
+                <div>
+                  <FiGithub />
+                </div>
               </a>
             )}
             {infoLine.Deployed.url && (
@@ -275,21 +277,21 @@ const cv = (props: cvProps) => {
             {skillsOther}
           </div>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-6">
           <div className="flex flex-col">
-            <h2 className="font-light"> Code Projects </h2>
+            <h2 className="font-light text-lg"> Development Projects </h2>
             <div className="w-full">{CodeProjects}</div>
           </div>
           <div className="flex flex-col">
-            <h2 className="font-light"> Professional Experiences </h2>
+            <h2 className="font-light text-lg"> Professional Experiences </h2>
             <div className="w-full">{Pro}</div>
           </div>
           <div className="flex flex-col">
-            <h2 className="font-light"> Studies </h2>
+            <h2 className="font-light text-lg"> Education </h2>
             <div className="w-full">{Studies}</div>
           </div>
           <div className="flex flex-col">
-            <h2 className="font-light">Other</h2>
+            <h2 className="font-light text-lg">Misc</h2>
             <div className="w-full">{Outside}</div>
           </div>
         </div>

@@ -4,14 +4,14 @@ interface CardLayoutProps extends React.PropsWithChildren {
   first: boolean;
 }
 
-const CardLayout = ({ first, children }: any) => {
+const CardLayout = ({ first, children }: CardLayoutProps) => {
   return (
     <div
       className={`pt-4 pb-4
 								${!first ? "border-t" : "border-none"} 
-								border-stone-800/20 border-t
-                text-sm
-								flex flex-col gap-2
+								flex flex-col
+                gap-2
+								border-t border-stone-800/20 text-sm
 								`}
     >
       {children}
